@@ -6,7 +6,114 @@
 
   <title>KGN Building Demolition</title>
 
-  <style>
+ /* ===== MOBILE RESPONSIVE ===== */
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 280px));
+    justify-content: center;
+    gap: 25px;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.card {
+    width: 100%;
+    min-height: 280px;
+    padding: 35px 25px;
+    background: #eef5f9;
+    color: #222;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    .services {
+        padding: 50px 20px;
+    }
+
+    .services h2 {
+        font-size: 36px;
+        margin-bottom: 35px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+        width: 100%;
+        max-width: 500px;
+        gap: 25px;
+        padding: 0 10px;
+    }
+
+    .card {
+        width: 100%;
+        min-height: auto;
+        padding: 30px 22px;
+        color: #222 !important;
+        background: #eef5f9 !important;
+        text-align: center;
+    }
+
+    .card h3 {
+        display: block !important;
+        color: #222 !important;
+        font-size: 22px;
+        margin: 15px 0;
+    }
+
+    .card p {
+        display: block !important;
+        color: #333 !important;
+        font-size: 16px;
+        line-height: 1.6;
+        margin: 0;
+    }
+
+    .card img {
+        display: block !important;
+        max-width: 100%;
+        height: auto;
+        margin: 0 auto 15px;
+    }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+
+    .services {
+        padding: 40px 15px;
+    }
+
+    .services h2 {
+        font-size: 32px;
+    }
+
+    .card {
+        padding: 25px 18px;
+    }
+
+    .card h3 {
+        font-size: 20px;
+    }
+
+    .card p {
+        font-size: 15px;
+    }
+} <style>
     * {
       margin: 0;
       padding: 0;
