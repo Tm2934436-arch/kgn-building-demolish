@@ -1,26 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
-  <meta 
+
+  <meta
     name="viewport"
     content="width=device-width, initial-scale=1.0">
+
   <title>
     KGN Building Demolish | Professional Demolition Services
   </title>
+
+
   <style>
-    /* =========================
-       RESET
-    ========================== */
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
       scroll-behavior: smooth;
     }
+
+
     html {
       scroll-behavior: smooth;
     }
+
+
     body {
       font-family: Arial, Helvetica, sans-serif;
       background: #0d0d0d;
@@ -28,63 +36,105 @@
       line-height: 1.6;
       overflow-x: hidden;
     }
+
+
     a {
       text-decoration: none;
     }
+
+
     /* =========================
        HEADER
     ========================== */
+
     header {
       position: sticky;
       top: 0;
       z-index: 9999;
+
       width: 100%;
+
       background: rgba(10, 10, 10, 0.97);
+
       border-bottom: 1px solid #333;
+
       padding: 18px 6%;
+
       display: flex;
       justify-content: space-between;
       align-items: center;
+
       gap: 20px;
     }
+
+
     .logo {
       color: #ffb000;
+
       font-size: 24px;
+
       font-weight: 900;
+
       text-transform: uppercase;
+
       letter-spacing: 0.5px;
+
       white-space: nowrap;
     }
+
+
     nav {
       display: flex;
+
       align-items: center;
+
       justify-content: center;
+
       flex-wrap: wrap;
+
       gap: 5px;
     }
+
+
     nav a {
       color: #ffffff;
+
       padding: 10px 13px;
+
       border-radius: 7px;
+
       font-size: 15px;
+
       font-weight: 700;
+
       transition: 0.3s;
     }
+
+
     nav a:hover {
       background: #ffb000;
+
       color: #111;
-      transform: translateY(-2px);
     }
+
+
     /* =========================
-       HERO / HOME
+       HOME
     ========================== */
+
     #home {
       min-height: 92vh;
+
       display: flex;
+
       justify-content: center;
+
       align-items: center;
+
       text-align: center;
+
       padding: 100px 7%;
+
       background:
         radial-gradient(
           circle at center,
@@ -93,761 +143,2202 @@
           #080808 100%
         );
     }
+
+
     .hero-content {
       width: 100%;
+
       max-width: 950px;
     }
+
+
     .hero-badge {
       display: inline-block;
+
       padding: 8px 16px;
+
       margin-bottom: 22px;
+
       border: 1px solid #ffb000;
+
       border-radius: 30px;
+
       color: #ffb000;
+
       font-size: 14px;
+
       font-weight: bold;
+
       letter-spacing: 1px;
     }
+
+
     .hero h1 {
       font-size: clamp(42px, 7vw, 82px);
+
       line-height: 1.05;
+
       text-transform: uppercase;
+
       margin-bottom: 25px;
     }
+
+
     .hero h1 span {
       color: #ffb000;
     }
+
+
     .hero-subtitle {
       color: #dddddd;
+
       font-size: clamp(18px, 3vw, 25px);
+
       max-width: 800px;
+
       margin: 0 auto 35px;
     }
+
+
     .hero-buttons {
       display: flex;
+
       justify-content: center;
+
       align-items: center;
+
       gap: 15px;
+
       flex-wrap: wrap;
     }
+
+
     .btn {
       display: inline-block;
+
       padding: 15px 28px;
+
       border-radius: 7px;
+
       font-weight: 800;
+
       transition: 0.3s;
+
       border: 2px solid #ffb000;
     }
+
+
     .btn-primary {
       background: #ffb000;
+
       color: #111;
     }
+
+
     .btn-primary:hover {
       background: #ffffff;
+
       border-color: #ffffff;
-      transform: translateY(-3px);
     }
+
+
     .btn-secondary {
       background: transparent;
+
       color: #ffffff;
     }
+
+
     .btn-secondary:hover {
       background: #ffb000;
+
       color: #111;
-      transform: translateY(-3px);
     }
+
+
     /* =========================
        COMMON SECTIONS
     ========================== */
+
     section {
       padding: 90px 7%;
+
       scroll-margin-top: 90px;
     }
+
+
     .section-heading {
       max-width: 800px;
+
       margin: 0 auto 55px;
+
       text-align: center;
     }
+
+
     .section-heading h2 {
       font-size: clamp(32px, 5vw, 48px);
+
       text-transform: uppercase;
+
       margin-bottom: 15px;
     }
+
+
     .section-heading h2 span {
       color: #ffb000;
     }
+
+
     .section-heading p {
       color: #bdbdbd;
+
       font-size: 17px;
     }
+
+
     /* =========================
        SERVICES
     ========================== */
+
     #services {
       background: #151515;
     }
+
+
     .services-grid {
       max-width: 1200px;
+
       margin: auto;
+
       display: grid;
+
       grid-template-columns:
         repeat(3, minmax(0, 1fr));
+
       gap: 25px;
     }
+
+
     .service-card {
       background: #222222;
+
       border: 1px solid #383838;
+
       border-radius: 13px;
+
       padding: 35px 25px;
+
       text-align: center;
+
       transition: 0.3s;
     }
+
+
     .service-card:hover {
       transform: translateY(-8px);
+
       border-color: #ffb000;
+
       box-shadow:
         0 15px 35px rgba(255, 176, 0, 0.12);
     }
+
+
     .service-icon {
       font-size: 45px;
+
       margin-bottom: 18px;
     }
+
+
     .service-card h3 {
       color: #ffb000;
+
       font-size: 22px;
+
       margin-bottom: 12px;
     }
+
+
     .service-card p {
       color: #cccccc;
+
       font-size: 16px;
     }
+
+
     /* =========================
        ABOUT
     ========================== */
+
     #about {
       background: #f1f1f1;
+
       color: #222222;
     }
+
+
     #about .section-heading p {
       color: #555555;
     }
+
+
     .about-content {
       max-width: 1100px;
+
       margin: auto;
+
       text-align: center;
     }
+
+
     .about-intro {
       max-width: 900px;
+
       margin: 0 auto 40px;
+
       color: #444444;
+
       font-size: 19px;
     }
+
+
     .about-grid {
       display: grid;
+
       grid-template-columns:
         repeat(3, minmax(0, 1fr));
+
       gap: 22px;
     }
+
+
     .about-card {
       background: #ffffff;
+
       border: 1px solid #dddddd;
+
       border-radius: 12px;
+
       padding: 32px 22px;
     }
+
+
     .about-icon {
       font-size: 38px;
+
       margin-bottom: 12px;
     }
+
+
     .about-card h3 {
       margin-bottom: 10px;
+
       color: #222222;
     }
+
+
     .about-card p {
       color: #555555;
     }
+
+
     /* =========================
        PROJECTS
     ========================== */
+
     #projects {
       background: #0d0d0d;
     }
+
+
     .projects-grid {
       max-width: 1100px;
+
       margin: auto;
+
       display: grid;
+
       grid-template-columns:
         repeat(2, minmax(0, 1fr));
+
       gap: 25px;
     }
+
+
     .project-card {
       background: #202020;
+
       border-radius: 12px;
+
       padding: 35px;
+
       border-left: 5px solid #ffb000;
+
       transition: 0.3s;
     }
+
+
     .project-card:hover {
       transform: translateY(-5px);
+
       background: #252525;
     }
+
+
     .project-card h3 {
       color: #ffb000;
+
       font-size: 23px;
+
       margin-bottom: 12px;
     }
+
+
     .project-card p {
       color: #cccccc;
+
       font-size: 16px;
     }
+
+
     /* =========================
        CONTACT
     ========================== */
+
     #contact {
       background: #1a1a1a;
+
       text-align: center;
     }
+
+
     .contact-content {
       max-width: 850px;
+
       margin: auto;
     }
+
+
     .contact-description {
       color: #cccccc;
+
       font-size: 19px;
+
       margin-bottom: 30px;
     }
+
+
     .phone-number {
       display: inline-block;
+
       color: #ffb000;
+
       font-size: 25px;
+
       font-weight: 900;
+
       margin-bottom: 30px;
     }
+
+
     .contact-buttons {
       display: flex;
+
       justify-content: center;
+
       align-items: center;
+
       gap: 13px;
+
       flex-wrap: wrap;
     }
+
+
     .contact-btn {
       display: inline-block;
+
       padding: 14px 22px;
+
       border-radius: 8px;
+
       background: #292929;
+
       border: 1px solid #444444;
+
       color: #ffffff;
+
       font-weight: 800;
+
       transition: 0.3s;
     }
+
+
     .contact-btn:hover {
       background: #ffb000;
+
       border-color: #ffb000;
+
       color: #111111;
-      transform: translateY(-3px);
     }
+
+
+    /* =========================
+       AI HELP BUTTON
+    ========================== */
+
+    .ai-help-button {
+
+      position: fixed;
+
+      right: 22px;
+
+      bottom: 22px;
+
+      z-index: 10000;
+
+      width: 62px;
+
+      height: 62px;
+
+      border: none;
+
+      border-radius: 50%;
+
+      background: #ffb000;
+
+      color: #111;
+
+      font-size: 28px;
+
+      cursor: pointer;
+
+      box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.5);
+
+      transition: 0.3s;
+    }
+
+
+    .ai-help-button:hover {
+
+      transform: scale(1.08);
+
+      background: #ffffff;
+    }
+
+
+    /* =========================
+       AI CHAT BOX
+    ========================== */
+
+    .ai-chat {
+
+      position: fixed;
+
+      right: 22px;
+
+      bottom: 95px;
+
+      z-index: 9999;
+
+      width: 360px;
+
+      max-width: calc(100vw - 30px);
+
+      height: 520px;
+
+      background: #171717;
+
+      border: 1px solid #444;
+
+      border-radius: 16px;
+
+      box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.65);
+
+      overflow: hidden;
+
+      display: none;
+
+      flex-direction: column;
+    }
+
+
+    .ai-chat.active {
+
+      display: flex;
+    }
+
+
+    .ai-header {
+
+      background: #ffb000;
+
+      color: #111;
+
+      padding: 15px 17px;
+
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+      font-weight: 900;
+    }
+
+
+    .ai-header small {
+
+      display: block;
+
+      font-size: 11px;
+
+      font-weight: 700;
+
+      opacity: 0.75;
+    }
+
+
+    .ai-close {
+
+      border: none;
+
+      background: transparent;
+
+      color: #111;
+
+      font-size: 23px;
+
+      cursor: pointer;
+
+      font-weight: bold;
+    }
+
+
+    .ai-messages {
+
+      flex: 1;
+
+      overflow-y: auto;
+
+      padding: 15px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 10px;
+    }
+
+
+    .ai-message {
+
+      max-width: 88%;
+
+      padding: 10px 13px;
+
+      border-radius: 12px;
+
+      font-size: 14px;
+
+      line-height: 1.5;
+
+      white-space: pre-line;
+    }
+
+
+    .ai-bot {
+
+      align-self: flex-start;
+
+      background: #292929;
+
+      color: #eeeeee;
+
+      border-bottom-left-radius: 4px;
+    }
+
+
+    .ai-user {
+
+      align-self: flex-end;
+
+      background: #ffb000;
+
+      color: #111;
+
+      border-bottom-right-radius: 4px;
+    }
+
+
+    .ai-input-area {
+
+      display: flex;
+
+      gap: 7px;
+
+      padding: 10px;
+
+      border-top: 1px solid #333;
+
+      background: #111;
+    }
+
+
+    .ai-input {
+
+      flex: 1;
+
+      min-width: 0;
+
+      padding: 11px;
+
+      border-radius: 8px;
+
+      border: 1px solid #444;
+
+      outline: none;
+
+      background: #222;
+
+      color: #ffffff;
+
+      font-size: 14px;
+    }
+
+
+    .ai-send {
+
+      border: none;
+
+      border-radius: 8px;
+
+      padding: 0 15px;
+
+      background: #ffb000;
+
+      color: #111;
+
+      font-weight: 900;
+
+      cursor: pointer;
+    }
+
+
+    .ai-quick {
+
+      display: flex;
+
+      gap: 6px;
+
+      overflow-x: auto;
+
+      padding: 8px 10px;
+
+      background: #111;
+
+      border-top: 1px solid #292929;
+    }
+
+
+    .ai-quick button {
+
+      flex: 0 0 auto;
+
+      border: 1px solid #444;
+
+      background: #222;
+
+      color: #ddd;
+
+      border-radius: 20px;
+
+      padding: 7px 10px;
+
+      font-size: 11px;
+
+      cursor: pointer;
+    }
+
+
+    .ai-quick button:hover {
+
+      background: #ffb000;
+
+      color: #111;
+
+      border-color: #ffb000;
+    }
+
+
     /* =========================
        FOOTER
     ========================== */
+
     footer {
+
       background: #070707;
+
       border-top: 1px solid #292929;
+
       text-align: center;
+
       padding: 28px 15px;
+
       color: #999999;
     }
+
+
     footer strong {
+
       color: #ffb000;
     }
+
+
     /* =========================
        TABLET
     ========================== */
+
     @media (max-width: 950px) {
+
       header {
+
         flex-direction: column;
+
         padding: 16px 4%;
       }
+
+
       .services-grid {
+
         grid-template-columns:
           repeat(2, minmax(0, 1fr));
       }
+
+
       .about-grid {
+
         grid-template-columns:
           repeat(2, minmax(0, 1fr));
       }
+
     }
+
+
     /* =========================
        MOBILE
     ========================== */
+
     @media (max-width: 700px) {
+
       header {
+
         padding: 15px 4%;
+
         gap: 12px;
       }
+
+
       .logo {
+
         font-size: 19px;
+
         text-align: center;
+
         white-space: normal;
       }
+
+
       nav {
+
         width: 100%;
+
         gap: 3px;
       }
+
+
       nav a {
+
         font-size: 13px;
-        padding: 8px 8px;
+
+        padding: 8px;
       }
+
+
       #home {
+
         min-height: 88vh;
+
         padding: 80px 5%;
       }
+
+
       .hero h1 {
+
         font-size: 43px;
       }
+
+
       .hero-subtitle {
+
         font-size: 17px;
       }
+
+
       .hero-buttons {
+
         flex-direction: column;
+
         max-width: 340px;
+
         margin: auto;
       }
+
+
       .hero-buttons .btn {
+
         width: 100%;
+
         text-align: center;
       }
+
+
       section {
+
         padding: 70px 5%;
       }
+
+
       .services-grid,
       .about-grid,
       .projects-grid {
+
         grid-template-columns: 1fr;
       }
+
+
       .service-card {
+
         padding: 30px 22px;
       }
+
+
       .project-card {
+
         padding: 28px 22px;
       }
+
+
       .contact-buttons {
+
         flex-direction: column;
+
         max-width: 340px;
+
         margin: auto;
       }
+
+
       .contact-btn {
+
         width: 100%;
+
         text-align: center;
       }
+
+
+      .ai-chat {
+
+        right: 10px;
+
+        bottom: 88px;
+
+        width: calc(100vw - 20px);
+
+        height: 500px;
+      }
+
+
+      .ai-help-button {
+
+        right: 15px;
+
+        bottom: 15px;
+      }
+
     }
+
+
     /* =========================
        SMALL PHONE
     ========================== */
+
     @media (max-width: 430px) {
+
       .hero h1 {
+
         font-size: 38px;
       }
+
+
       .section-heading h2 {
+
         font-size: 31px;
       }
+
+
       nav a {
+
         font-size: 12px;
+
         padding: 7px 6px;
       }
+
     }
+
   </style>
+
 </head>
+
+
 <body>
-  <!-- =====================================
-       HEADER / NAVIGATION
-  ====================================== -->
+
+
+  <!-- =========================
+       HEADER
+  ========================== -->
+
   <header>
+
     <div class="logo">
       🏗️ KGN Building Demolish
     </div>
+
+
     <nav>
+
       <a href="#home">
         🏠 Home
       </a>
+
+
       <a href="#services">
         🛠️ Services
       </a>
+
+
       <a href="#about">
         🏢 About
       </a>
+
+
       <a href="#projects">
         🏆 Projects
       </a>
+
+
       <a href="#contact">
         📞 Contact
       </a>
+
     </nav>
+
   </header>
-  <!-- =====================================
+
+
+
+  <!-- =========================
        HOME
-  ====================================== -->
+  ========================== -->
+
   <section id="home">
+
     <div class="hero-content">
+
       <div class="hero-badge">
         💥 PROFESSIONAL DEMOLITION SERVICES
       </div>
+
+
       <h1>
         KGN
         <span>
           BUILDING DEMOLISH
         </span>
       </h1>
+
+
       <p class="hero-subtitle">
+
         🏗️ Professional Building Demolition,
         Structural Removal, Site Clearing,
         Wall Cutting, Core Cutting & Earth Moving Services.
+
       </p>
+
+
       <div class="hero-buttons">
+
         <a
           href="#services"
           class="btn btn-primary">
+
           🛠️ Explore Services
+
         </a>
+
+
         <a
           href="tel:+917904515704"
           class="btn btn-secondary">
+
           📞 Call Now
+
         </a>
+
       </div>
+
     </div>
+
   </section>
-  <!-- =====================================
+
+
+
+  <!-- =========================
        SERVICES
-  ====================================== -->
+  ========================== -->
+
   <section id="services">
+
     <div class="section-heading">
+
       <h2>
         🛠️ Our
         <span>Services</span>
       </h2>
+
+
       <p>
         Complete demolition and site-related solutions
         for residential, commercial and other project requirements.
       </p>
+
     </div>
+
+
     <div class="services-grid">
+
+
       <div class="service-card">
+
         <div class="service-icon">
           🏗️
         </div>
+
         <h3>
           Building Demolition
         </h3>
+
         <p>
           Professional demolition services for
           residential, commercial and old building structures.
         </p>
+
       </div>
+
+
+
       <div class="service-card">
+
         <div class="service-icon">
           🚧
         </div>
+
         <h3>
           Site Clearing
         </h3>
+
         <p>
           Complete site clearing, debris removal
           and site preparation services.
         </p>
+
       </div>
+
+
+
       <div class="service-card">
+
         <div class="service-icon">
           🏚️
         </div>
+
         <h3>
           Structural Removal
         </h3>
+
         <p>
           Professional removal of old,
           unwanted and damaged structures.
         </p>
+
       </div>
+
+
+
       <div class="service-card">
+
         <div class="service-icon">
           🧱
         </div>
+
         <h3>
           Wall Cutting
         </h3>
+
         <p>
           Accurate wall cutting services for
           renovation, modification and structural requirements.
         </p>
+
       </div>
+
+
+
       <div class="service-card">
+
         <div class="service-icon">
           ⚙️
         </div>
+
         <h3>
           Core Cutting
         </h3>
+
         <p>
           Precision core cutting solutions for
           concrete and construction requirements.
         </p>
+
       </div>
+
+
+
       <div class="service-card">
+
         <div class="service-icon">
           🚜
         </div>
+
         <h3>
           Earth Movers
         </h3>
+
         <p>
           Earth moving, excavation, debris handling
           and site preparation support.
         </p>
+
       </div>
+
+
     </div>
+
   </section>
-  <!-- =====================================
+
+
+
+  <!-- =========================
        ABOUT
-  ====================================== -->
+  ========================== -->
+
   <section id="about">
+
     <div class="section-heading">
+
       <h2>
         🏢 About
         <span>KGN</span>
       </h2>
+
+
       <p>
         Professional demolition and site-clearing
         services with practical project experience.
       </p>
+
     </div>
+
+
     <div class="about-content">
+
       <p class="about-intro">
+
         KGN Building Demolish provides professional
         building demolition, structural removal,
         site clearing and related services.
         We have successfully completed numerous
         projects for different customer and site requirements.
+
       </p>
+
+
       <div class="about-grid">
+
+
         <div class="about-card">
+
           <div class="about-icon">
             🏆
           </div>
+
           <h3>
             Successful Projects
           </h3>
+
           <p>
             Successfully completed numerous
             demolition, structural removal and
             site-related projects.
           </p>
+
         </div>
+
+
+
         <div class="about-card">
+
           <div class="about-icon">
             🏛️
           </div>
+
           <h3>
             Government Projects
           </h3>
+
           <p>
             Experience working with government
             project requirements and site conditions.
           </p>
+
         </div>
+
+
+
         <div class="about-card">
+
           <div class="about-icon">
             🏢
           </div>
+
           <h3>
             Private Projects
           </h3>
+
           <p>
             Experience handling private residential,
             commercial and individual project requirements.
           </p>
+
         </div>
+
+
+
         <div class="about-card">
+
           <div class="about-icon">
             👷
           </div>
+
           <h3>
             Professional Execution
           </h3>
+
           <p>
             Focus on proper execution, site requirements,
             efficiency and professional work.
           </p>
+
         </div>
+
+
+
         <div class="about-card">
+
           <div class="about-icon">
             🚧
           </div>
+
           <h3>
             Complete Site Support
           </h3>
+
           <p>
             Demolition, clearing, structural removal
             and related site support services.
           </p>
+
         </div>
+
+
+
         <div class="about-card">
+
           <div class="about-icon">
             💪
           </div>
+
           <h3>
             Experienced Team
           </h3>
+
           <p>
             Practical experience across different
             structures, sites and project requirements.
           </p>
+
         </div>
+
+
       </div>
+
     </div>
+
   </section>
-  <!-- =====================================
+
+
+
+  <!-- =========================
        PROJECTS
-  ====================================== -->
+  ========================== -->
+
   <section id="projects">
+
     <div class="section-heading">
+
       <h2>
         🏆 Project
         <span>Experience</span>
       </h2>
+
+
       <p>
         Experience across government, private and
         individual project requirements.
       </p>
+
     </div>
+
+
     <div class="projects-grid">
+
+
       <div class="project-card">
+
         <h3>
           🏛️ Government Projects
         </h3>
+
         <p>
           Successfully handled demolition and
           site-related requirements for government
           project environments.
         </p>
+
       </div>
+
+
+
       <div class="project-card">
+
         <h3>
           🏢 Private Projects
         </h3>
+
         <p>
           Completed multiple private residential
           and commercial demolition requirements.
         </p>
+
       </div>
+
+
+
       <div class="project-card">
+
         <h3>
           👤 Individual Projects
         </h3>
+
         <p>
           Undertaken demolition, structural removal
           and site clearing work for individual customers.
         </p>
+
       </div>
+
+
+
       <div class="project-card">
+
         <h3>
           🚜 Site Development Support
         </h3>
+
         <p>
           Site clearing, earth moving, debris handling
           and preparation support for development works.
         </p>
+
       </div>
+
+
+
       <div class="project-card">
+
         <h3>
           🧱 Structural Work
         </h3>
+
         <p>
           Wall cutting, core cutting and structural
           removal solutions for different requirements.
         </p>
+
       </div>
+
+
+
       <div class="project-card">
+
         <h3>
           ⭐ Multiple Successful Works
         </h3>
+
         <p>
           Strong practical experience from completing
           numerous projects with different site conditions.
         </p>
+
       </div>
+
+
     </div>
+
   </section>
-  <!-- =====================================
+
+
+
+  <!-- =========================
        CONTACT
-  ====================================== -->
+  ========================== -->
+
   <section id="contact">
+
     <div class="section-heading">
+
       <h2>
         📞 Contact
         <span>KGN</span>
       </h2>
+
+
       <p>
         Need demolition, site clearing or structural
         removal services? Get in touch with us directly.
       </p>
+
     </div>
+
+
     <div class="contact-content">
+
+
       <p class="contact-description">
+
         📱 Call us for project enquiries,
         demolition requirements and site-related work.
+
       </p>
+
+
       <a
         href="tel:+917904515704"
         class="phone-number">
+
         📞 +91 79-04515704
+
       </a>
+
+
       <div class="contact-buttons">
-        <!-- CALL -->
+
+
         <a
           href="tel:+917904515704"
           class="contact-btn">
+
           📞 Call Now
+
         </a>
-        <!-- WHATSAPP -->
+
+
         <a
           href="https://wa.me/917904515704"
           target="_blank"
           rel="noopener noreferrer"
           class="contact-btn">
+
           💬 WhatsApp
+
         </a>
-        <!-- INSTAGRAM -->
+
+
         <a
           href="https://www.instagram.com/kgn_building_demolish?igsh=MWNkMDBiajY1dTBoag%3D%3D&utm_source=qr"
           target="_blank"
           rel="noopener noreferrer"
           class="contact-btn">
+
           📸 Instagram
+
         </a>
-        <!-- FACEBOOK -->
+
+
         <a
           href="https://www.facebook.com/share/1doinm9c44/?mibextid=wwXIfr"
           target="_blank"
           rel="noopener noreferrer"
           class="contact-btn">
+
           👍 Facebook
+
         </a>
+
+
       </div>
+
     </div>
+
   </section>
-  <!-- =====================================
+
+
+
+  <!-- =========================
        FOOTER
-  ====================================== -->
+  ========================== -->
+
   <footer>
+
     <p>
+
       ©️ 2026
+
       <strong>
         KGN Building Demolish
       </strong>.
+
       All Rights Reserved.
+
     </p>
+
+
     <p>
+
       🏗️ Professional Demolition &
       Site Clearing Services
+
     </p>
+
   </footer>
+
+
+
+  <!-- =========================
+       AI HELP BUTTON
+  ========================== -->
+
+  <button
+    class="ai-help-button"
+    id="aiHelpButton"
+    aria-label="Open KGN AI Help">
+
+    🤖
+
+  </button>
+
+
+
+  <!-- =========================
+       AI CHAT WINDOW
+  ========================== -->
+
+  <div
+    class="ai-chat"
+    id="aiChat">
+
+
+    <div class="ai-header">
+
+      <div>
+
+        🤖 KGN AI Help
+
+        <small>
+          Ask about our services
+        </small>
+
+      </div>
+
+
+      <button
+        class="ai-close"
+        id="aiClose"
+        aria-label="Close chat">
+
+        ×
+
+      </button>
+
+    </div>
+
+
+
+    <div
+      class="ai-messages"
+      id="aiMessages">
+
+      <div class="ai-message ai-bot">
+
+        👋 Hello! Welcome to KGN Building Demolish.
+
+        I can help you with:
+        🏗️ Services
+        🚧 Site clearing
+        🧱 Wall cutting
+        ⚙️ Core cutting
+        🚜 Earth movers
+        🏆 Project experience
+        📞 Contact details
+
+        What would you like to know?
+
+      </div>
+
+    </div>
+
+
+
+    <div class="ai-quick">
+
+      <button
+        onclick="askQuickQuestion('What services do you provide?')">
+
+        🛠️ Services
+
+      </button>
+
+
+      <button
+        onclick="askQuickQuestion('How can I contact KGN?')">
+
+        📞 Contact
+
+      </button>
+
+
+      <button
+        onclick="askQuickQuestion('Tell me about your projects')">
+
+        🏆 Projects
+
+      </button>
+
+    </div>
+
+
+
+    <div class="ai-input-area">
+
+      <input
+        type="text"
+        id="aiInput"
+        class="ai-input"
+        placeholder="Ask KGN..."
+        autocomplete="off">
+
+
+      <button
+        class="ai-send"
+        id="aiSend">
+
+        Send
+
+      </button>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- =========================
+       AI CHAT JAVASCRIPT
+  ========================== -->
+
+  <script>
+
+    const aiHelpButton =
+      document.getElementById("aiHelpButton");
+
+
+    const aiChat =
+      document.getElementById("aiChat");
+
+
+    const aiClose =
+      document.getElementById("aiClose");
+
+
+    const aiMessages =
+      document.getElementById("aiMessages");
+
+
+    const aiInput =
+      document.getElementById("aiInput");
+
+
+    const aiSend =
+      document.getElementById("aiSend");
+
+
+
+    /* OPEN CHAT */
+
+    aiHelpButton.addEventListener(
+      "click",
+      function () {
+
+        aiChat.classList.toggle("active");
+
+        if (aiChat.classList.contains("active")) {
+
+          setTimeout(function () {
+
+            aiInput.focus();
+
+          }, 200);
+
+        }
+
+      }
+    );
+
+
+
+    /* CLOSE CHAT */
+
+    aiClose.addEventListener(
+      "click",
+      function () {
+
+        aiChat.classList.remove("active");
+
+      }
+    );
+
+
+
+    /* ADD MESSAGE */
+
+    function addMessage(
+      text,
+      type
+    ) {
+
+      const message =
+        document.createElement("div");
+
+
+      message.className =
+        "ai-message " +
+        type;
+
+
+      message.textContent =
+        text;
+
+
+      aiMessages.appendChild(
+        message
+      );
+
+
+      aiMessages.scrollTop =
+        aiMessages.scrollHeight;
+
+    }
+
+
+
+    /* SMART KGN REPLY */
+
+    function getKGNReply(question) {
+
+      const q =
+        question
+          .toLowerCase()
+          .trim();
+
+
+
+      if (
+        q.includes("hello") ||
+        q.includes("hi") ||
+        q.includes("hey")
+      ) {
+
+        return `
+👋 Hello! Welcome to KGN Building Demolish.
+
+How can I help you today?
+
+You can ask about our services, projects or contact details.
+        `;
+
+      }
+
+
+
+      if (
+        q.includes("service") ||
+        q.includes("what do you do") ||
+        q.includes("work")
+      ) {
+
+        return `
+🛠️ KGN Building Demolish provides:
+
+🏗️ Building Demolition
+🚧 Site Clearing
+🏚️ Structural Removal
+🧱 Wall Cutting
+⚙️ Core Cutting
+🚜 Earth Moving / Earth Movers
+
+For project enquiries, please contact us directly.
+        `;
+
+      }
+
+
+
+      if (
+        q.includes("demolition") ||
+        q.includes("building")
+      ) {
+
+        return `
+🏗️ We provide professional building demolition services for residential, commercial and old structures.
+
+For a project-specific discussion, please call KGN.
+        `;
+
+      }
+
+
+
+      if (
+        q.includes("site") ||
+        q.includes("clearing") ||
+        q.includes("debris")
+      ) {
+
+        return `
+🚧 Our site clearing service includes site preparation support, debris removal and related clearing work.
+
+Please contact KGN for your project requirements.
+        `;
+
+      }
+
+
+
+      if (
+        q.includes("wall") ||
+        q.includes("cutting")
+      ) {
+
+        return `
+🧱 Yes, KGN provides wall cutting services for renovation, modification and structural requirements.
+
+📞 Call us to discuss your requirement.
+        `;
+
+      }
+
+
+
+      if (
+        q.includes("core")
+      ) {
+
+        return `
+⚙️ KGN provides core cutting solutions for concrete and construction requirements.
+
+📞 Contact us to discuss your project.
+        `;
+
+      }
+
+
+
+      if (
+        q.includes("earth") ||
+        q.includes("excavat") ||
+        q.includes("machine")
+      ) {
+
+        return `
+🚜 KGN provides earth moving, excavation, debris handling and site preparation support.
+
+Please contact us for project details.
+        `;
+
+      }
+
+
+
+      if (
+        q.includes("project") ||
+        q.includes("experience") ||
+        q.includes("government") ||
+        q.includes("private")
+      ) {
+
+        return `
+🏆 KGN has experience across:
+
+🏛️ Government projects
+🏢 Private projects
+👤 Individual projects
+🚜 Site development support
+🧱 Structural work
+
+We have completed numerous site-related works.
+        `;
+
+      }
+
+
+
+      if (
+        q.includes("price") ||
+        q.includes("cost") ||
+        q.includes("rate") ||
+        q.includes("quote")
+      ) {
+
+        return `
+💰 Project pricing depends on the building, structure, site condition, work scope and equipment required.
+
+For an accurate quotation, please contact KGN directly.
+
+📞 +91 79-04515704
+        `;
+
+      }
+
+
+
+      if (
+        q.includes("contact") ||
+        q.includes("phone") ||
+        q.includes("call") ||
+        q.includes("number")
+      ) {
+
+        return `
+📞 KGN Building Demolish
+
+Phone:
++91 79-04515704
+
+💬 WhatsApp is also available through the Contact section.
+        `;
+
+      }
+
+
+
+      if (
+        q.includes("whatsapp")
+      ) {
+
+        return `
+💬 You can contact KGN through WhatsApp using the WhatsApp button in the Contact section.
+
+📞 +91 79-04515704
+        `;
+
+      }
+
+
+
+      if (
+        q.includes("instagram")
+      ) {
+
+        return `
+📸 You can visit the KGN Building Demolish Instagram page using the Instagram button in the Contact section.
+        `;
+
+      }
+
+
+
+      if (
+        q.includes("facebook")
+      ) {
+
+        return `
+👍 You can visit the KGN Building Demolish Facebook page using the Facebook button in the Contact section.
+        `;
+
+      }
+
+
+
+      if (
+        q.includes("location") ||
+        q.includes("area") ||
+        q.includes("where")
+      ) {
+
+        return `
+📍 Please contact KGN directly to discuss your project location and service availability.
+
+📞 +91 79-04515704
+        `;
+
+      }
+
+
+
+      return `
+🤖 Thanks for your question!
+
+I can currently help with:
+
+🛠️ Services
+🏗️ Building demolition
+🚧 Site clearing
+🧱 Wall cutting
+⚙️ Core cutting
+🚜 Earth movers
+🏆 Projects
+💰 Pricing enquiries
+📞 Contact details
+
+Try asking one of these topics.
+      `;
+
+    }
+
+
+
+    /* SEND MESSAGE */
+
+    function sendAIMessage() {
+
+      const question =
+        aiInput.value.trim();
+
+
+      if (!question) {
+
+        return;
+
+      }
+
+
+      addMessage(
+        question,
+        "ai-user"
+      );
+
+
+      aiInput.value = "";
+
+
+      setTimeout(
+        function () {
+
+          const reply =
+            getKGNReply(question);
+
+
+          addMessage(
+            reply,
+            "ai-bot"
+          );
+
+        },
+        400
+      );
+
+    }
+
+
+
+    /* SEND BUTTON */
+
+    aiSend.addEventListener(
+      "click",
+      sendAIMessage
+    );
+
+
+
+    /* ENTER KEY */
+
+    aiInput.addEventListener(
+      "keydown",
+      function (event) {
+
+        if (
+          event.key === "Enter"
+        ) {
+
+          sendAIMessage();
+
+        }
+
+      }
+    );
+
+
+
+    /* QUICK QUESTIONS */
+
+    function askQuickQuestion(
+      question
+    ) {
+
+      aiInput.value =
+        question;
+
+
+      sendAIMessage();
+
+    }
+
+  </script>
+
+
 </body>
+
 </html>
