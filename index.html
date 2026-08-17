@@ -1,812 +1,689 @@
-/* =====================================================
-   ENGLISH / TAMIL / HINDI
-===================================================== */ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>KGN Building Demolish</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+body{font-family:Arial,sans-serif;background:#0d0d0d;color:#fff;line-height:1.6}
+a{text-decoration:none}
+header{position:sticky;top:0;z-index:9999;background:rgba(10,10,10,.97);border-bottom:1px solid #333;padding:16px 5%;display:flex;justify-content:space-between;align-items:center;gap:15px}
+.logo{color:#ffb000;font-size:23px;font-weight:900}
+nav{display:flex;flex-wrap:wrap;gap:4px;justify-content:center}
+nav a,.lang button{color:#fff;background:transparent;border:0;padding:9px 10px;border-radius:7px;font-weight:bold;cursor:pointer}
+nav a:hover,.lang button:hover,.lang .active{background:#ffb000;color:#111}
+
+.lang{display:flex;gap:4px}
+section{padding:85px 6%;scroll-margin-top:90px}
+#home{min-height:90vh;display:flex;align-items:center;justify-content:center;text-align:center;background:radial-gradient(circle,#303030,#151515 45%,#080808)}
+.hero{max-width:950px}
+.badge{display:inline-block;border:1px solid #ffb000;color:#ffb000;border-radius:30px;padding:8px 16px;margin-bottom:20px;font-weight:bold}
+h1{font-size:clamp(42px,7vw,82px);line-height:1.05;margin-bottom:25px}
+h1 span,h2 span{color:#ffb000}
+.hero p{font-size:clamp(18px,3vw,24px);color:#ddd;margin-bottom:30px}
+.buttons{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.btn{padding:14px 25px;border:2px solid #ffb000;border-radius:8px;font-weight:bold}
+.primary{background:#ffb000;color:#111}
+.secondary{color:#fff}
+
+.heading{text-align:center;max-width:800px;margin:0 auto 45px}
+h2{font-size:clamp(32px,5vw,48px);margin-bottom:12px}
+.heading p{color:#bbb}
+
+#services{background:#151515}
+.grid{max-width:1200px;margin:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:#222;border:1px solid #383838;border-radius:13px;padding:30px 22px;text-align:center;transition:.3s}
+.card:hover{transform:translateY(-6px);border-color:#ffb000}
+.icon{font-size:42px;margin-bottom:12px}
+.card h3{color:#ffb000;margin-bottom:10px}
+.card p{color:#ccc}
+
+#about{background:#f1f1f1;color:#222}
+#about .heading p{color:#555}
+.about-text{text-align:center;max-width:900px;margin:0 auto 35px;color:#444;font-size:18px}
+.about-card{background:#fff;border:1px solid #ddd}
+.about-card h3{color:#222}
+
+#projects{background:#0d0d0d}
+.project-card{text-align:left;border-left:5px solid #ffb000}
+
+#contact{background:#1a1a1a;text-align:center}
+.phone{display:inline-block;color:#ffb000;font-size:25px;font-weight:bold;margin:20px}
+.contact-buttons{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.contact-btn{padding:13px 20px;background:#292929;border:1px solid #444;color:#fff;border-radius:8px;font-weight:bold}
+.contact-btn:hover{background:#ffb000;color:#111}
+
+#enquiry{background:#111}
+.form{max-width:700px;margin:auto;background:#202020;padding:30px;border-radius:15px;border:1px solid #444}
+.form input,.form select,.form textarea{width:100%;padding:13px;margin-bottom:13px;border-radius:8px;border:1px solid #444;background:#111;color:#fff;font-size:15px}
+.form textarea{min-height:120px;resize:vertical}
+.form button{width:100%;padding:14px;border:0;border-radius:8px;background:#ffb000;color:#111;font-weight:bold;font-size:16px;cursor:pointer}
+
+footer{background:#070707;border-top:1px solid #292929;text-align:center;padding:25px;color:#999}
+footer strong{color:#ffb000}
+
+/* AI */
+.ai-help{position:fixed;right:20px;bottom:20px;z-index:10000;width:62px;height:62px;border:0;border-radius:50%;background:#ffb000;font-size:28px;cursor:pointer;box-shadow:0 8px 30px #000}
+.ai-chat{position:fixed;right:20px;bottom:92px;width:360px;max-width:calc(100vw - 25px);height:520px;background:#171717;border:1px solid #444;border-radius:15px;z-index:9999;display:none;overflow:hidden;box-shadow:0 20px 60px #000}
+.ai-chat.active{display:flex;flex-direction:column}
+.ai-head{background:#ffb000;color:#111;padding:14px 16px;display:flex;justify-content:space-between;font-weight:bold}
+.ai-head button{border:0;background:transparent;font-size:23px;cursor:pointer}
+.messages{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:9px}
+.msg{max-width:88%;padding:10px 12px;border-radius:12px;font-size:14px;white-space:pre-line}
+.bot{background:#292929;align-self:flex-start}
+.user{background:#ffb000;color:#111;align-self:flex-end}
+.quick{display:flex;gap:5px;overflow-x:auto;padding:8px;background:#111}
+.quick button{white-space:nowrap;border:1px solid #444;background:#222;color:#ddd;border-radius:20px;padding:7px 10px;cursor:pointer}
+.ai-input{display:flex;gap:6px;padding:10px;background:#111;border-top:1px solid #333}
+.ai-input input{flex:1;padding:11px;border-radius:8px;border:1px solid #444;background:#222;color:#fff}
+.ai-input button{border:0;border-radius:8px;padding:0 14px;background:#ffb000;font-weight:bold}
+
+@media(max-width:950px){
+header{flex-direction:column}
+.grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:700px){
+nav a{font-size:12px;padding:7px 6px}
+.logo{font-size:19px;text-align:center}
+.grid{grid-template-columns:1fr}
+section{padding:65px 5%}
+.ai-chat{right:10px;bottom:88px;width:calc(100vw - 20px)}
+.ai-help{right:15px;bottom:15px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo" data-key="logo">🏗️ KGN Building Demolish</div>
+
+<nav>
+<a href="#home" data-key="home">🏠 Home</a>
+<a href="#services" data-key="services">🛠️ Services</a>
+<a href="#about" data-key="about">🏢 About</a>
+<a href="#projects" data-key="projects">🏆 Projects</a>
+<a href="#enquiry" data-key="enquiry">📝 Enquiry</a>
+<a href="#contact" data-key="contact">📞 Contact</a>
+</nav>
+
+<div class="lang">
+<button onclick="changeLanguage('en')" id="enBtn">EN</button>
+<button onclick="changeLanguage('ta')" id="taBtn">தமிழ்</button>
+<button onclick="changeLanguage('hi')" id="hiBtn">हिन्दी</button>
+</div>
+</header>
+
+<section id="home">
+<div class="hero">
+<div class="badge" data-key="badge">💥 PROFESSIONAL DEMOLITION SERVICES</div>
+<h1>KGN <span data-key="heroTitle">BUILDING DEMOLISH</span></h1>
+<p data-key="heroText">
+🏗️ Professional Building Demolition, Structural Removal,
+Site Clearing, Wall Cutting, Core Cutting & Earth Moving Services.
+</p>
+
+<div class="buttons">
+<a href="#services" class="btn primary" data-key="explore">🛠️ Explore Services</a>
+<a href="tel:+917904515704" class="btn secondary" data-key="callNow">📞 Call Now</a>
+</div>
+</div>
+</section>
+
+<section id="services">
+<div class="heading">
+<h2>🛠️ <span data-key="servicesTitle">Our Services</span></h2>
+<p data-key="servicesIntro">Complete demolition and site-related solutions for residential, commercial and other project requirements.</p>
+</div>
+
+<div class="grid">
+
+<div class="card">
+<div class="icon">🏗️</div>
+<h3 data-key="buildingDemolition">Building Demolition</h3>
+<p data-key="buildingText">Professional demolition services for residential, commercial and old building structures.</p>
+</div>
+
+<div class="card">
+<div class="icon">🚧</div>
+<h3 data-key="siteClearing">Site Clearing</h3>
+<p data-key="siteText">Complete site clearing, debris removal and site preparation services.</p>
+</div>
+
+<div class="card">
+<div class="icon">🏚️</div>
+<h3 data-key="structural">Structural Removal</h3>
+<p data-key="structuralText">Professional removal of old, unwanted and damaged structures.</p>
+</div>
+
+<div class="card">
+<div class="icon">🧱</div>
+<h3 data-key="wallCutting">Wall Cutting</h3>
+<p data-key="wallText">Accurate wall cutting services for renovation and structural requirements.</p>
+</div>
+
+<div class="card">
+<div class="icon">⚙️</div>
+<h3 data-key="coreCutting">Core Cutting</h3>
+<p data-key="coreText">Precision core cutting solutions for concrete and construction requirements.</p>
+</div>
+
+<div class="card">
+<div class="icon">🚜</div>
+<h3 data-key="earthMovers">Earth Movers</h3>
+<p data-key="earthText">Earth moving, excavation, debris handling and site preparation support.</p>
+</div>
+
+</div>
+</section>
+
+<section id="about">
+<div class="heading">
+<h2>🏢 <span data-key="aboutTitle">About KGN</span></h2>
+<p data-key="aboutIntro">Professional demolition and site-clearing services.</p>
+</div>
+
+<p class="about-text" data-key="aboutText">
+KGN Building Demolish provides professional building demolition,
+structural removal, site clearing and related services.
+</p>
+
+<div class="grid">
+
+<div class="card about-card">
+<div class="icon">🏆</div>
+<h3 data-key="successful">Successful Projects</h3>
+<p data-key="successfulText">Successfully completed numerous demolition and site-related projects.</p>
+</div>
+
+<div class="card about-card">
+<div class="icon">🏛️</div>
+<h3 data-key="government">Government Projects</h3>
+<p data-key="governmentText">Experience working with government project requirements.</p>
+</div>
+
+<div class="card about-card">
+<div class="icon">🏢</div>
+<h3 data-key="private">Private Projects</h3>
+<p data-key="privateText">Experience handling private residential and commercial requirements.</p>
+</div>
+
+<div class="card about-card">
+<div class="icon">👷</div>
+<h3 data-key="professional">Professional Execution</h3>
+<p data-key="professionalText">Focus on proper execution and professional work.</p>
+</div>
+
+<div class="card about-card">
+<div class="icon">🚧</div>
+<h3 data-key="siteSupport">Complete Site Support</h3>
+<p data-key="siteSupportText">Demolition, clearing, structural removal and site support.</p>
+</div>
+
+<div class="card about-card">
+<div class="icon">💪</div>
+<h3 data-key="team">Experienced Team</h3>
+<p data-key="teamText">Practical experience across different structures and sites.</p>
+</div>
+
+</div>
+</section>
+
+<section id="projects">
+<div class="heading">
+<h2>🏆 <span data-key="projectsTitle">Project Experience</span></h2>
+<p data-key="projectsIntro">Experience across government, private and individual projects.</p>
+</div>
+
+<div class="grid">
+
+<div class="card project-card">
+<h3>🏛️ <span data-key="government">Government Projects</span></h3>
+<p data-key="governmentText">Experience with government project environments and site requirements.</p>
+</div>
+
+<div class="card project-card">
+<h3>🏢 <span data-key="private">Private Projects</span></h3>
+<p data-key="privateText">Completed private residential and commercial requirements.</p>
+</div>
+
+<div class="card project-card">
+<h3>👤 <span data-key="individual">Individual Projects</span></h3>
+<p data-key="individualText">Demolition and site clearing work for individual customers.</p>
+</div>
+
+<div class="card project-card">
+<h3>🚜 <span data-key="siteDevelopment">Site Development Support</span></h3>
+<p data-key="siteDevelopmentText">Site clearing, earth moving and debris handling support.</p>
+</div>
+
+</div>
+</section>
+
+<section id="enquiry">
+<div class="heading">
+<h2>📝 <span data-key="enquiryTitle">Project Enquiry</span></h2>
+<p data-key="enquiryIntro">Send your project details directly to KGN WhatsApp.</p>
+</div>
+
+<div class="form">
+
+<input id="name" type="text" placeholder="Your Name">
+<input id="phone" type="tel" placeholder="Phone Number">
+<input id="location" type="text" placeholder="Project Location">
+
+<select id="work">
+<option value="">Select Service</option>
+<option>Building Demolition</option>
+<option>Site Clearing</option>
+<option>Structural Removal</option>
+<option>Wall Cutting</option>
+<option>Core Cutting</option>
+<option>Earth Movers</option>
+</select>
+
+<textarea id="details" placeholder="Tell us about your project"></textarea>
+
+<button onclick="sendEnquiry()" data-key="sendEnquiry">
+💬 Send Enquiry on WhatsApp
+</button>
+
+</div>
+</section>
+
+<section id="contact">
+<div class="heading">
+<h2>📞 <span data-key="contactTitle">Contact KGN</span></h2>
+<p data-key="contactIntro">Need demolition or site-related services? Contact us directly.</p>
+</div>
+
+<a class="phone" href="tel:+917904515704">📞 +91 79-04515704</a>
+
+<div class="contact-buttons">
+<a class="contact-btn" href="tel:+917904515704">📞 Call</a>
+<a class="contact-btn" href="https://wa.me/917904515704" target="_blank">💬 WhatsApp</a>
+<a class="contact-btn" href="https://www.instagram.com/kgn_building_demolish" target="_blank">📸 Instagram</a>
+<a class="contact-btn" href="https://www.facebook.com/share/1doinm9c44/" target="_blank">👍 Facebook</a>
+</div>
+</section>
+
+<footer>
+<p>©️ 2026 <strong>KGN Building Demolish</strong>. All Rights Reserved.</p>
+<p data-key="footer">🏗️ Professional Demolition & Site Clearing Services</p>
+</footer>
+
+<!-- AI BUTTON -->
+<button class="ai-help" id="aiHelp">🤖</button>
+
+<!-- AI CHAT -->
+<div class="ai-chat" id="aiChat">
+
+<div class="ai-head">
+<div>🤖 KGN AI Help<br><small data-key="aiSubtitle">Ask about our services</small></div>
+<button id="aiClose">×</button>
+</div>
+
+<div class="messages" id="messages">
+<div class="msg bot" data-key="aiWelcome">
+👋 Hello! Welcome to KGN Building Demolish.
+
+I can help you with services, projects, pricing enquiries and contact details.
+</div>
+</div>
+
+<div class="quick">
+<button onclick="quick('services')">🛠️ Services</button>
+<button onclick="quick('price')">💰 Price</button>
+<button onclick="quick('contact')">📞 Contact</button>
+</div>
+
+<div class="ai-input">
+<input id="aiInput" placeholder="Ask KGN...">
+<button onclick="sendAI()">Send</button>
+</div>
+
+</div>
+
+<script>
+
+/* =========================
+   MULTI LANGUAGE SYSTEM
+========================= */
 
 const translations = {
 
-  en: { 
-
-    "logo": "🏗️ KGN Building Demolish",
-
-    "home": "🏠 Home",
-    "services": "🛠️ Services",
-    "about": "🏢 About",
-    "projects": "🏆 Projects",
-    "contact": "📞 Contact",
-
-    "badge": "💥 PROFESSIONAL DEMOLITION SERVICES",
-
-    "heroTitle": "KGN BUILDING DEMOLISH",
-
-    "heroSubtitle":
-      "🏗️ Professional Building Demolition, Structural Removal, Site Clearing, Wall Cutting, Core Cutting & Earth Moving Services.",
-
-    "explore": "🛠️ Explore Services",
-    "callNow": "📞 Call Now",
-
-    "servicesTitle": "🛠️ Our Services",
-
-    "servicesIntro":
-      "Complete demolition and site-related solutions for residential, commercial and other project requirements.",
-
-    "buildingDemolition": "Building Demolition",
-    "buildingDemolitionText":
-      "Professional demolition services for residential, commercial and old building structures.",
-
-    "siteClearing": "Site Clearing",
-    "siteClearingText":
-      "Complete site clearing, debris removal and site preparation services.",
-
-    "structuralRemoval": "Structural Removal",
-    "structuralRemovalText":
-      "Professional removal of old, unwanted and damaged structures.",
-
-    "wallCutting": "Wall Cutting",
-    "wallCuttingText":
-      "Accurate wall cutting services for renovation, modification and structural requirements.",
-
-    "coreCutting": "Core Cutting",
-    "coreCuttingText":
-      "Precision core cutting solutions for concrete and construction requirements.",
-
-    "earthMovers": "Earth Movers",
-    "earthMoversText":
-      "Earth moving, excavation, debris handling and site preparation support.",
-
-    "aboutTitle": "🏢 About KGN",
-
-    "aboutIntro":
-      "KGN Building Demolish provides professional building demolition, structural removal, site clearing and related services. We have successfully completed numerous projects for different customer and site requirements.",
-
-    "successfulProjects": "Successful Projects",
-    "successfulProjectsText":
-      "Successfully completed numerous demolition, structural removal and site-related projects.",
-
-    "governmentProjects": "Government Projects",
-    "governmentProjectsText":
-      "Experience working with government project requirements and site conditions.",
-
-    "privateProjects": "Private Projects",
-    "privateProjectsText":
-      "Experience handling private residential, commercial and individual project requirements.",
-
-    "professionalExecution": "Professional Execution",
-    "professionalExecutionText":
-      "Focus on proper execution, site requirements, efficiency and professional work.",
-
-    "completeSiteSupport": "Complete Site Support",
-    "completeSiteSupportText":
-      "Demolition, clearing, structural removal and related site support services.",
-
-    "experiencedTeam": "Experienced Team",
-    "experiencedTeamText":
-      "Practical experience across different structures, sites and project requirements.",
-
-    "projectTitle": "🏆 Project Experience",
-
-    "projectIntro":
-      "Experience across government, private and individual project requirements.",
-
-    "governmentProjectText":
-      "Successfully handled demolition and site-related requirements for government project environments.",
-
-    "privateProjectText":
-      "Completed multiple private residential and commercial demolition requirements.",
-
-    "individualProjectText":
-      "Undertaken demolition, structural removal and site clearing work for individual customers.",
-
-    "siteDevelopment": "Site Development Support",
-
-    "siteDevelopmentText":
-      "Site clearing, earth moving, debris handling and preparation support for development works.",
-
-    "structuralWork": "Structural Work",
-
-    "structuralWorkText":
-      "Wall cutting, core cutting and structural removal solutions for different requirements.",
-
-    "multipleWorks": "Multiple Successful Works",
-
-    "multipleWorksText":
-      "Strong practical experience from completing numerous projects with different site conditions.",
-
-    "contactTitle": "📞 Contact KGN",
-
-    "contactIntro":
-      "Need demolition, site clearing or structural removal services? Get in touch with us directly.",
-
-    "contactDescription":
-      "📱 Call us for project enquiries, demolition requirements and site-related work.",
-
-    "whatsapp": "💬 WhatsApp",
-    "instagram": "📸 Instagram",
-    "facebook": "👍 Facebook",
-
-    "footer":
-      "🏗️ Professional Demolition & Site Clearing Services",
-
-    "aiTitle": "🤖 KGN AI Help",
-    "aiSubtitle": "Ask about our services",
-    "aiPlaceholder": "Ask KGN...",
-    "send": "Send",
-
-    "aiWelcome":
-      "👋 Hello! Welcome to KGN Building Demolish.\n\nI can help you with:\n🏗️ Services\n🚧 Site clearing\n🧱 Wall cutting\n⚙️ Core cutting\n🚜 Earth movers\n🏆 Project experience\n📞 Contact details\n\nWhat would you like to know?"
-
-  },
-
-
-  ta: {
-
-    "logo": "🏗️ KGN கட்டிட இடிப்பு",
-
-    "home": "🏠 முகப்பு",
-    "services": "🛠️ சேவைகள்",
-    "about": "🏢 எங்களை பற்றி",
-    "projects": "🏆 திட்டங்கள்",
-    "contact": "📞 தொடர்பு",
-
-    "badge": "💥 தொழில்முறை கட்டிட இடிப்பு சேவைகள்",
-
-    "heroTitle": "KGN கட்டிட இடிப்பு",
-
-    "heroSubtitle":
-      "🏗️ தொழில்முறை கட்டிட இடிப்பு, கட்டமைப்பு அகற்றுதல், தள சுத்தம், சுவர் வெட்டுதல், கோர் கட்டிங் மற்றும் மண் அகழ்வு சேவைகள்.",
-
-    "explore": "🛠️ சேவைகளை பார்க்க",
-    "callNow": "📞 இப்போது அழைக்க",
-
-    "servicesTitle": "🛠️ எங்கள் சேவைகள்",
-
-    "servicesIntro":
-      "வீட்டு, வணிக மற்றும் பல்வேறு திட்டங்களுக்கான முழுமையான கட்டிட இடிப்பு மற்றும் தள சேவைகள்.",
-
-    "buildingDemolition": "கட்டிட இடிப்பு",
-    "buildingDemolitionText":
-      "வீடுகள், வணிக கட்டிடங்கள் மற்றும் பழைய கட்டிடங்களுக்கான தொழில்முறை இடிப்பு சேவைகள்.",
-
-    "siteClearing": "தள சுத்தம்",
-    "siteClearingText":
-      "கட்டிட இடிபாடுகள் அகற்றுதல், தள சுத்தம் மற்றும் கட்டுமானத்திற்கு தளத்தை தயார் செய்தல்.",
-
-    "structuralRemoval": "கட்டமைப்பு அகற்றுதல்",
-    "structuralRemovalText":
-      "பழைய, தேவையற்ற மற்றும் சேதமடைந்த கட்டமைப்புகளை தொழில்முறை முறையில் அகற்றுதல்.",
-
-    "wallCutting": "சுவர் வெட்டுதல்",
-    "wallCuttingText":
-      "புதுப்பிப்பு, மாற்றம் மற்றும் கட்டமைப்பு தேவைகளுக்கான துல்லியமான சுவர் வெட்டும் சேவைகள்.",
-
-    "coreCutting": "கோர் கட்டிங்",
-    "coreCuttingText":
-      "கான்கிரீட் மற்றும் கட்டுமான தேவைகளுக்கான துல்லியமான கோர் கட்டிங் சேவைகள்.",
-
-    "earthMovers": "எர்த் மூவர்ஸ்",
-    "earthMoversText":
-      "மண் அகழ்வு, மண் நகர்த்துதல், கட்டிட இடிபாடுகள் கையாளுதல் மற்றும் தள தயாரிப்பு சேவைகள்.",
-
-    "aboutTitle": "🏢 KGN பற்றி",
-
-    "aboutIntro":
-      "KGN Building Demolish தொழில்முறை கட்டிட இடிப்பு, கட்டமைப்பு அகற்றுதல், தள சுத்தம் மற்றும் தொடர்புடைய சேவைகளை வழங்குகிறது. பல்வேறு வாடிக்கையாளர்கள் மற்றும் திட்ட தேவைகளுக்காக பல வெற்றிகரமான பணிகளை நிறைவு செய்துள்ளோம்.",
-
-    "successfulProjects": "வெற்றிகரமான திட்டங்கள்",
-    "successfulProjectsText":
-      "பல கட்டிட இடிப்பு, கட்டமைப்பு அகற்றுதல் மற்றும் தள தொடர்பான பணிகளை வெற்றிகரமாக நிறைவு செய்துள்ளோம்.",
-
-    "governmentProjects": "அரசு திட்டங்கள்",
-    "governmentProjectsText":
-      "அரசு திட்டங்களின் தள தேவைகள் மற்றும் பணிச்சூழலில் அனுபவம்.",
-
-    "privateProjects": "தனியார் திட்டங்கள்",
-    "privateProjectsText":
-      "தனியார் வீடுகள், வணிக கட்டிடங்கள் மற்றும் தனிப்பட்ட வாடிக்கையாளர் திட்டங்களில் அனுபவம்.",
-
-    "professionalExecution": "தொழில்முறை செயல்பாடு",
-    "professionalExecutionText":
-      "சரியான பணிச்செயல், தள தேவைகள், திறமையான செயல்பாடு மற்றும் தொழில்முறை பணிக்கு முக்கியத்துவம்.",
-
-    "completeSiteSupport": "முழுமையான தள ஆதரவு",
-    "completeSiteSupportText":
-      "கட்டிட இடிப்பு, தள சுத்தம், கட்டமைப்பு அகற்றுதல் மற்றும் தொடர்புடைய தள ஆதரவு சேவைகள்.",
-
-    "experiencedTeam": "அனுபவமுள்ள குழு",
-    "experiencedTeamText":
-      "பல்வேறு கட்டிடங்கள், தளங்கள் மற்றும் திட்ட தேவைகளில் நடைமுறை அனுபவம்.",
-
-    "projectTitle": "🏆 திட்ட அனுபவம்",
-
-    "projectIntro":
-      "அரசு, தனியார் மற்றும் தனிப்பட்ட வாடிக்கையாளர் திட்டங்களில் அனுபவம்.",
-
-    "governmentProjectText":
-      "அரசு திட்ட சூழலில் கட்டிட இடிப்பு மற்றும் தள தொடர்பான பணிகளை வெற்றிகரமாக செய்துள்ளோம்.",
-
-    "privateProjectText":
-      "பல தனியார் வீட்டு மற்றும் வணிக கட்டிட இடிப்பு பணிகளை நிறைவு செய்துள்ளோம்.",
-
-    "individualProjectText":
-      "தனிப்பட்ட வாடிக்கையாளர்களுக்கான கட்டிட இடிப்பு, கட்டமைப்பு அகற்றுதல் மற்றும் தள சுத்தம் பணிகள்.",
-
-    "siteDevelopment": "தள மேம்பாட்டு ஆதரவு",
-
-    "siteDevelopmentText":
-      "தள சுத்தம், மண் நகர்த்துதல், இடிபாடுகள் அகற்றுதல் மற்றும் தள தயாரிப்பு ஆதரவு.",
-
-    "structuralWork": "கட்டமைப்பு பணிகள்",
-
-    "structuralWorkText":
-      "சுவர் வெட்டுதல், கோர் கட்டிங் மற்றும் பல்வேறு தேவைகளுக்கான கட்டமைப்பு அகற்றுதல்.",
-
-    "multipleWorks": "பல வெற்றிகரமான பணிகள்",
-
-    "multipleWorksText":
-      "பல்வேறு தள சூழ்நிலைகளில் பல திட்டங்களை நிறைவு செய்த நடைமுறை அனுபவம்.",
-
-    "contactTitle": "📞 KGN-ஐ தொடர்பு கொள்ளுங்கள்",
-
-    "contactIntro":
-      "கட்டிட இடிப்பு, தள சுத்தம் அல்லது கட்டமைப்பு அகற்றுதல் சேவை தேவையா? எங்களை நேரடியாக தொடர்பு கொள்ளுங்கள்.",
-
-    "contactDescription":
-      "📱 திட்ட விசாரணைகள், கட்டிட இடிப்பு மற்றும் தள பணிகளுக்காக எங்களை அழைக்கவும்.",
-
-    "whatsapp": "💬 WhatsApp",
-    "instagram": "📸 Instagram",
-    "facebook": "👍 Facebook",
-
-    "footer":
-      "🏗️ தொழில்முறை கட்டிட இடிப்பு மற்றும் தள சுத்தம் சேவைகள்",
-
-    "aiTitle": "🤖 KGN AI உதவி",
-    "aiSubtitle": "எங்கள் சேவைகள் பற்றி கேளுங்கள்",
-    "aiPlaceholder": "KGN-ஐ கேளுங்கள்...",
-    "send": "அனுப்பு",
-
-    "aiWelcome":
-      "👋 வணக்கம்! KGN Building Demolish-க்கு வரவேற்கிறோம்.\n\nநான் உங்களுக்கு உதவ முடியும்:\n🏗️ சேவைகள்\n🚧 தள சுத்தம்\n🧱 சுவர் வெட்டுதல்\n⚙️ கோர் கட்டிங்\n🚜 எர்த் மூவர்ஸ்\n🏆 திட்ட அனுபவம்\n📞 தொடர்பு விவரங்கள்\n\nஎதை பற்றி தெரிந்து கொள்ள விரும்புகிறீர்கள்?"
-
-  },
-
-
-  hi: {
-
-    "logo": "🏗️ KGN बिल्डिंग डिमोलिश",
-
-    "home": "🏠 होम",
-    "services": "🛠️ सेवाएं",
-    "about": "🏢 हमारे बारे में",
-    "projects": "🏆 प्रोजेक्ट्स",
-    "contact": "📞 संपर्क",
-
-    "badge": "💥 प्रोफेशनल डिमोलिशन सर्विसेज",
-
-    "heroTitle": "KGN बिल्डिंग डिमोलिश",
-
-    "heroSubtitle":
-      "🏗️ प्रोफेशनल बिल्डिंग डिमोलिशन, स्ट्रक्चरल रिमूवल, साइट क्लियरिंग, वॉल कटिंग, कोर कटिंग और अर्थ मूविंग सेवाएं।",
-
-    "explore": "🛠️ सेवाएं देखें",
-    "callNow": "📞 अभी कॉल करें",
-
-    "servicesTitle": "🛠️ हमारी सेवाएं",
-
-    "servicesIntro":
-      "घर, कमर्शियल और अन्य प्रोजेक्ट्स के लिए पूरी डिमोलिशन और साइट संबंधित सेवाएं।",
-
-    "buildingDemolition": "बिल्डिंग डिमोलिशन",
-    "buildingDemolitionText":
-      "रेजिडेंशियल, कमर्शियल और पुराने भवनों के लिए प्रोफेशनल डिमोलिशन सेवाएं।",
-
-    "siteClearing": "साइट क्लियरिंग",
-    "siteClearingText":
-      "साइट क्लियरिंग, मलबा हटाना और साइट तैयारी की पूरी सेवाएं।",
-
-    "structuralRemoval": "स्ट्रक्चरल रिमूवल",
-    "structuralRemovalText":
-      "पुरानी, अनावश्यक और क्षतिग्रस्त संरचनाओं को प्रोफेशनल तरीके से हटाना।",
-
-    "wallCutting": "वॉल कटिंग",
-    "wallCuttingText":
-      "रिनोवेशन, बदलाव और स्ट्रक्चरल जरूरतों के लिए सटीक वॉल कटिंग सेवाएं।",
-
-    "coreCutting": "कोर कटिंग",
-    "coreCuttingText":
-      "कंक्रीट और निर्माण कार्यों के लिए सटीक कोर कटिंग सेवाएं।",
-
-    "earthMovers": "अर्थ मूवर्स",
-    "earthMoversText":
-      "अर्थ मूविंग, खुदाई, मलबा संभालना और साइट तैयारी सहायता।",
-
-    "aboutTitle": "🏢 KGN के बारे में",
-
-    "aboutIntro":
-      "KGN Building Demolish प्रोफेशनल बिल्डिंग डिमोलिशन, स्ट्रक्चरल रिमूवल, साइट क्लियरिंग और संबंधित सेवाएं प्रदान करता है। हमने विभिन्न ग्राहकों और प्रोजेक्ट आवश्यकताओं के लिए कई सफल कार्य पूरे किए हैं।",
-
-    "successfulProjects": "सफल प्रोजेक्ट्स",
-    "successfulProjectsText":
-      "कई डिमोलिशन, स्ट्रक्चरल रिमूवल और साइट संबंधित प्रोजेक्ट सफलतापूर्वक पूरे किए हैं।",
-
-    "governmentProjects": "सरकारी प्रोजेक्ट्स",
-    "governmentProjectsText":
-      "सरकारी प्रोजेक्ट की आवश्यकताओं और साइट परिस्थितियों में कार्य करने का अनुभव।",
-
-    "privateProjects": "प्राइवेट प्रोजेक्ट्स",
-    "privateProjectsText":
-      "प्राइवेट रेजिडेंशियल, कमर्शियल और व्यक्तिगत प्रोजेक्ट्स में अनुभव।",
-
-    "professionalExecution": "प्रोफेशनल कार्य",
-    "professionalExecutionText":
-      "सही कार्यप्रणाली, साइट आवश्यकताओं, दक्षता और प्रोफेशनल काम पर ध्यान।",
-
-    "completeSiteSupport": "पूरी साइट सहायता",
-    "completeSiteSupportText":
-      "डिमोलिशन, क्लियरिंग, स्ट्रक्चरल रिमूवल और संबंधित साइट सपोर्ट सेवाएं।",
-
-    "experiencedTeam": "अनुभवी टीम",
-    "experiencedTeamText":
-      "अलग-अलग संरचनाओं, साइट्स और प्रोजेक्ट आवश्यकताओं में व्यावहारिक अनुभव।",
-
-    "projectTitle": "🏆 प्रोजेक्ट अनुभव",
-
-    "projectIntro":
-      "सरकारी, प्राइवेट और व्यक्तिगत प्रोजेक्ट आवश्यकताओं में अनुभव।",
-
-    "governmentProjectText":
-      "सरकारी प्रोजेक्ट वातावरण में डिमोलिशन और साइट संबंधित कार्य सफलतापूर्वक किए हैं।",
-
-    "privateProjectText":
-      "कई प्राइवेट रेजिडेंशियल और कमर्शियल डिमोलिशन कार्य पूरे किए हैं।",
-
-    "individualProjectText":
-      "व्यक्तिगत ग्राहकों के लिए डिमोलिशन, स्ट्रक्चरल रिमूवल और साइट क्लियरिंग कार्य किए हैं।",
-
-    "siteDevelopment": "साइट डेवलपमेंट सपोर्ट",
-
-    "siteDevelopmentText":
-      "साइट क्लियरिंग, अर्थ मूविंग, मलबा हटाना और साइट तैयारी सहायता।",
-
-    "structuralWork": "स्ट्रक्चरल कार्य",
-
-    "structuralWorkText":
-      "वॉल कटिंग, कोर कटिंग और अलग-अलग आवश्यकताओं के लिए स्ट्रक्चरल रिमूवल।",
-
-    "multipleWorks": "कई सफल कार्य",
-
-    "multipleWorksText":
-      "अलग-अलग साइट परिस्थितियों में कई प्रोजेक्ट पूरे करने का अच्छा व्यावहारिक अनुभव।",
-
-    "contactTitle": "📞 KGN से संपर्क करें",
-
-    "contactIntro":
-      "डिमोलिशन, साइट क्लियरिंग या स्ट्रक्चरल रिमूवल सेवा चाहिए? सीधे हमसे संपर्क करें।",
-
-    "contactDescription":
-      "📱 प्रोजेक्ट पूछताछ, डिमोलिशन और साइट कार्यों के लिए हमें कॉल करें।",
-
-    "whatsapp": "💬 WhatsApp",
-    "instagram": "📸 Instagram",
-    "facebook": "👍 Facebook",
-
-    "footer":
-      "🏗️ प्रोफेशनल डिमोलिशन और साइट क्लियरिंग सेवाएं",
-
-    "aiTitle": "🤖 KGN AI सहायता",
-    "aiSubtitle": "हमारी सेवाओं के बारे में पूछें",
-    "aiPlaceholder": "KGN से पूछें...",
-    "send": "भेजें",
-
-    "aiWelcome":
-      "👋 नमस्ते! KGN Building Demolish में आपका स्वागत है।\n\nमैं आपकी मदद कर सकता हूँ:\n🏗️ सेवाएं\n🚧 साइट क्लियरिंग\n🧱 वॉल कटिंग\n⚙️ कोर कटिंग\n🚜 अर्थ मूवर्स\n🏆 प्रोजेक्ट अनुभव\n📞 संपर्क जानकारी\n\nआप क्या जानना चाहते हैं?"
-
-  }
+en:{
+logo:"🏗️ KGN Building Demolish",
+home:"🏠 Home",
+services:"🛠️ Services",
+about:"🏢 About",
+projects:"🏆 Projects",
+enquiry:"📝 Enquiry",
+contact:"📞 Contact",
+badge:"💥 PROFESSIONAL DEMOLITION SERVICES",
+heroTitle:"BUILDING DEMOLISH",
+heroText:"🏗️ Professional Building Demolition, Structural Removal, Site Clearing, Wall Cutting, Core Cutting & Earth Moving Services.",
+explore:"🛠️ Explore Services",
+callNow:"📞 Call Now",
+servicesTitle:"Our Services",
+servicesIntro:"Complete demolition and site-related solutions for residential, commercial and other project requirements.",
+buildingDemolition:"Building Demolition",
+buildingText:"Professional demolition services for residential, commercial and old building structures.",
+siteClearing:"Site Clearing",
+siteText:"Complete site clearing, debris removal and site preparation services.",
+structural:"Structural Removal",
+structuralText:"Professional removal of old, unwanted and damaged structures.",
+wallCutting:"Wall Cutting",
+wallText:"Accurate wall cutting services for renovation and structural requirements.",
+coreCutting:"Core Cutting",
+coreText:"Precision core cutting solutions for concrete and construction requirements.",
+earthMovers:"Earth Movers",
+earthText:"Earth moving, excavation, debris handling and site preparation support.",
+aboutTitle:"About KGN",
+aboutIntro:"Professional demolition and site-clearing services.",
+aboutText:"KGN Building Demolish provides professional building demolition, structural removal, site clearing and related services.",
+successful:"Successful Projects",
+successfulText:"Successfully completed numerous demolition and site-related projects.",
+government:"Government Projects",
+governmentText:"Experience working with government project requirements.",
+private:"Private Projects",
+privateText:"Experience handling private residential and commercial requirements.",
+professional:"Professional Execution",
+professionalText:"Focus on proper execution and professional work.",
+siteSupport:"Complete Site Support",
+siteSupportText:"Demolition, clearing, structural removal and site support.",
+team:"Experienced Team",
+teamText:"Practical experience across different structures and sites.",
+projectsTitle:"Project Experience",
+projectsIntro:"Experience across government, private and individual projects.",
+individual:"Individual Projects",
+individualText:"Demolition and site clearing work for individual customers.",
+siteDevelopment:"Site Development Support",
+siteDevelopmentText:"Site clearing, earth moving and debris handling support.",
+enquiryTitle:"Project Enquiry",
+enquiryIntro:"Send your project details directly to KGN WhatsApp.",
+contactTitle:"Contact KGN",
+contactIntro:"Need demolition or site-related services? Contact us directly.",
+sendEnquiry:"💬 Send Enquiry on WhatsApp",
+footer:"🏗️ Professional Demolition & Site Clearing Services",
+aiSubtitle:"Ask about our services",
+aiWelcome:"👋 Hello! Welcome to KGN Building Demolish.\n\nI can help you with services, projects, pricing enquiries and contact details."
+},
+
+ta:{
+logo:"🏗️ KGN கட்டிட இடிப்பு",
+home:"🏠 முகப்பு",
+services:"🛠️ சேவைகள்",
+about:"🏢 எங்களை பற்றி",
+projects:"🏆 திட்டங்கள்",
+enquiry:"📝 விசாரணை",
+contact:"📞 தொடர்பு",
+badge:"💥 தொழில்முறை கட்டிட இடிப்பு சேவைகள்",
+heroTitle:"கட்டிட இடிப்பு",
+heroText:"🏗️ கட்டிட இடிப்பு, கட்டமைப்பு அகற்றுதல், இடம் சுத்தம் செய்தல், சுவர் வெட்டுதல், கோர் கட்டிங் மற்றும் எர்த் மூவர் சேவைகள்.",
+explore:"🛠️ சேவைகளை பார்க்க",
+callNow:"📞 இப்போது அழைக்க",
+servicesTitle:"எங்கள் சேவைகள்",
+servicesIntro:"வீடு, வணிகம் மற்றும் பல்வேறு திட்டங்களுக்கான முழுமையான கட்டிட இடிப்பு மற்றும் தள சேவைகள்.",
+buildingDemolition:"கட்டிட இடிப்பு",
+buildingText:"வீடு, வணிகம் மற்றும் பழைய கட்டிடங்களுக்கான தொழில்முறை இடிப்பு சேவைகள்.",
+siteClearing:"இடம் சுத்தம் செய்தல்",
+siteText:"கட்டிட கழிவுகளை அகற்றி இடத்தை சுத்தம் செய்து தயார்படுத்துதல்.",
+structural:"கட்டமைப்பு அகற்றுதல்",
+structuralText:"பழைய மற்றும் தேவையற்ற கட்டமைப்புகளை தொழில்முறையாக அகற்றுதல்.",
+wallCutting:"சுவர் வெட்டுதல்",
+wallText:"மாற்றம் மற்றும் கட்டுமான தேவைகளுக்கான துல்லியமான சுவர் வெட்டுதல்.",
+coreCutting:"கோர் கட்டிங்",
+coreText:"கான்கிரீட் மற்றும் கட்டுமான தேவைகளுக்கான துல்லியமான கோர் கட்டிங்.",
+earthMovers:"எர்த் மூவர்ஸ்",
+earthText:"மண் அகழ்வு, மண் நகர்த்துதல், கழிவு அகற்றுதல் மற்றும் தள தயாரிப்பு.",
+aboutTitle:"KGN பற்றி",
+aboutIntro:"தொழில்முறை கட்டிட இடிப்பு மற்றும் தள சுத்தம் செய்யும் சேவைகள்.",
+aboutText:"KGN Building Demolish கட்டிட இடிப்பு, கட்டமைப்பு அகற்றுதல், தள சுத்தம் மற்றும் தொடர்புடைய சேவைகளை வழங்குகிறது.",
+successful:"வெற்றிகரமான திட்டங்கள்",
+successfulText:"பல கட்டிட இடிப்பு மற்றும் தள சம்பந்தமான பணிகளை வெற்றிகரமாக செய்துள்ளோம்.",
+government:"அரசு திட்டங்கள்",
+governmentText:"அரசு திட்டங்களின் தேவைகளுக்கு ஏற்ப பணியாற்றிய அனுபவம் உள்ளது.",
+private:"தனியார் திட்டங்கள்",
+privateText:"தனியார் வீடு மற்றும் வணிக திட்டங்களில் அனுபவம் உள்ளது.",
+professional:"தொழில்முறை செயல்பாடு",
+professionalText:"சரியான செயல்பாடு மற்றும் தொழில்முறை பணிக்கு முக்கியத்துவம்.",
+siteSupport:"முழுமையான தள சேவை",
+siteSupportText:"இடிப்பு, சுத்தம் செய்தல், கட்டமைப்பு அகற்றுதல் மற்றும் தள சேவைகள்.",
+team:"அனுபவமுள்ள குழு",
+teamText:"பலவிதமான கட்டிடங்கள் மற்றும் தளங்களில் நடைமுறை அனுபவம்.",
+projectsTitle:"திட்ட அனுபவம்",
+projectsIntro:"அரசு, தனியார் மற்றும் தனிநபர் திட்டங்களில் அனுபவம்.",
+individual:"தனிநபர் திட்டங்கள்",
+individualText:"தனிநபர் வாடிக்கையாளர்களுக்கான கட்டிட இடிப்பு மற்றும் தள சுத்தம் பணிகள்.",
+siteDevelopment:"தள மேம்பாட்டு சேவை",
+siteDevelopmentText:"தள சுத்தம், மண் நகர்த்துதல் மற்றும் கழிவு அகற்றுதல்.",
+enquiryTitle:"திட்ட விசாரணை",
+enquiryIntro:"உங்கள் திட்ட விவரங்களை KGN WhatsApp-க்கு நேரடியாக அனுப்புங்கள்.",
+contactTitle:"KGN தொடர்பு",
+contactIntro:"கட்டிட இடிப்பு அல்லது தள சேவை தேவையா? நேரடியாக தொடர்பு கொள்ளுங்கள்.",
+sendEnquiry:"💬 WhatsApp-ல் விசாரணை அனுப்பவும்",
+footer:"🏗️ தொழில்முறை கட்டிட இடிப்பு மற்றும் தள சுத்தம் சேவைகள்",
+aiSubtitle:"எங்கள் சேவைகள் பற்றி கேளுங்கள்",
+aiWelcome:"👋 KGN Building Demolish-க்கு வரவேற்கிறோம்.\n\nசேவைகள், திட்டங்கள், விலை விசாரணை மற்றும் தொடர்பு விவரங்களில் உதவ முடியும்."
+},
+
+hi:{
+logo:"🏗️ KGN बिल्डिंग डिमोलिश",
+home:"🏠 होम",
+services:"🛠️ सेवाएं",
+about:"🏢 हमारे बारे में",
+projects:"🏆 प्रोजेक्ट्स",
+enquiry:"📝 पूछताछ",
+contact:"📞 संपर्क",
+badge:"💥 प्रोफेशनल डिमोलिशन सर्विसेज",
+heroTitle:"बिल्डिंग डिमोलिश",
+heroText:"🏗️ बिल्डिंग डिमोलिशन, स्ट्रक्चरल रिमूवल, साइट क्लियरिंग, वॉल कटिंग, कोर कटिंग और अर्थ मूवर सेवाएं।",
+explore:"🛠️ सेवाएं देखें",
+callNow:"📞 अभी कॉल करें",
+servicesTitle:"हमारी सेवाएं",
+servicesIntro:"रेजिडेंशियल, कमर्शियल और अन्य प्रोजेक्ट्स के लिए डिमोलिशन और साइट सेवाएं।",
+buildingDemolition:"बिल्डिंग डिमोलिशन",
+buildingText:"रेजिडेंशियल, कमर्शियल और पुराने भवनों के लिए प्रोफेशनल डिमोलिशन सेवा।",
+siteClearing:"साइट क्लियरिंग",
+siteText:"साइट की सफाई, मलबा हटाना और साइट तैयार करने की सेवा।",
+structural:"स्ट्रक्चरल रिमूवल",
+structuralText:"पुरानी और अनचाही संरचनाओं को प्रोफेशनल तरीके से हटाना।",
+wallCutting:"वॉल कटिंग",
+wallText:"रिनोवेशन और निर्माण आवश्यकताओं के लिए सटीक वॉल कटिंग।",
+coreCutting:"कोर कटिंग",
+coreText:"कंक्रीट और निर्माण कार्यों के लिए सटीक कोर कटिंग।",
+earthMovers:"अर्थ मूवर्स",
+earthText:"अर्थ मूविंग, खुदाई, मलबा हटाना और साइट तैयारी।",
+aboutTitle:"KGN के बारे में",
+aboutIntro:"प्रोफेशनल डिमोलिशन और साइट क्लियरिंग सेवाएं।",
+aboutText:"KGN Building Demolish बिल्डिंग डिमोलिशन, स्ट्रक्चरल रिमूवल, साइट क्लियरिंग और संबंधित सेवाएं प्रदान करता है।",
+successful:"सफल प्रोजेक्ट्स",
+successfulText:"कई डिमोलिशन और साइट संबंधी प्रोजेक्ट सफलतापूर्वक पूरे किए हैं।",
+government:"सरकारी प्रोजेक्ट्स",
+governmentText:"सरकारी प्रोजेक्ट आवश्यकताओं के साथ काम करने का अनुभव।",
+private:"प्राइवेट प्रोजेक्ट्स",
+privateText:"प्राइवेट रेजिडेंशियल और कमर्शियल प्रोजेक्ट्स का अनुभव।",
+professional:"प्रोफेशनल काम",
+professionalText:"सही तरीके से और प्रोफेशनल तरीके से काम करने पर ध्यान।",
+siteSupport:"पूरी साइट सेवा",
+siteSupportText:"डिमोलिशन, क्लियरिंग, स्ट्रक्चरल रिमूवल और साइट सपोर्ट।",
+team:"अनुभवी टीम",
+teamText:"अलग-अलग स्ट्रक्चर और साइट्स पर व्यावहारिक अनुभव।",
+projectsTitle:"प्रोजेक्ट अनुभव",
+projectsIntro:"सरकारी, प्राइवेट और व्यक्तिगत प्रोजेक्ट्स में अनुभव।",
+individual:"व्यक्तिगत प्रोजेक्ट्स",
+individualText:"व्यक्तिगत ग्राहकों के लिए डिमोलिशन और साइट क्लियरिंग कार्य।",
+siteDevelopment:"साइट डेवलपमेंट सपोर्ट",
+siteDevelopmentText:"साइट क्लियरिंग, अर्थ मूविंग और मलबा हटाने की सहायता।",
+enquiryTitle:"प्रोजेक्ट पूछताछ",
+enquiryIntro:"अपने प्रोजेक्ट की जानकारी सीधे KGN WhatsApp पर भेजें।",
+contactTitle:"KGN से संपर्क करें",
+contactIntro:"डिमोलिशन या साइट सेवा चाहिए? सीधे हमसे संपर्क करें।",
+sendEnquiry:"💬 WhatsApp पर पूछताछ भेजें",
+footer:"🏗️ प्रोफेशनल डिमोलिशन और साइट क्लियरिंग सेवाएं",
+aiSubtitle:"हमारी सेवाओं के बारे में पूछें",
+aiWelcome:"👋 KGN Building Demolish में आपका स्वागत है।\n\nमैं सेवाओं, प्रोजेक्ट्स, कीमत और संपर्क जानकारी में मदद कर सकता हूं।"
+}
 
 };
 
+function changeLanguage(lang){
 
-/* =====================================================
-   LANGUAGE CHANGE FUNCTION
-===================================================== */
+const data=translations[lang];
 
-function changeLanguage(language) {
+document.querySelectorAll("[data-key]").forEach(el=>{
+const key=el.getAttribute("data-key");
+if(data[key]) el.textContent=data[key];
+});
 
-  const t = translations[language];
+document.documentElement.lang=lang;
 
-  if (!t) return;
+document.getElementById("enBtn").classList.remove("active");
+document.getElementById("taBtn").classList.remove("active");
+document.getElementById("hiBtn").classList.remove("active");
 
+if(lang==="en")document.getElementById("enBtn").classList.add("active");
+if(lang==="ta")document.getElementById("taBtn").classList.add("active");
+if(lang==="hi")document.getElementById("hiBtn").classList.add("active");
 
-  /* HEADER */
+localStorage.setItem("kgnLanguage",lang);
+}
 
-  const logo = document.querySelector(".logo");
+changeLanguage(localStorage.getItem("kgnLanguage")||"en");
 
-  if (logo) {
-    logo.textContent = t.logo;
-  }
 
+/* =========================
+   WHATSAPP ENQUIRY
+========================= */
 
-  const navLinks =
-    document.querySelectorAll("nav a");
+function sendEnquiry(){
 
-  if (navLinks.length >= 5) {
+const name=document.getElementById("name").value.trim();
+const phone=document.getElementById("phone").value.trim();
+const location=document.getElementById("location").value.trim();
+const work=document.getElementById("work").value;
+const details=document.getElementById("details").value.trim();
 
-    navLinks[0].textContent = t.home;
-    navLinks[1].textContent = t.services;
-    navLinks[2].textContent = t.about;
-    navLinks[3].textContent = t.projects;
-    navLinks[4].textContent = t.contact;
+if(!name||!phone||!location||!work){
 
-  }
+alert("Please fill Name, Phone, Location and Service.");
 
+return;
+}
 
-  /* HOME */
+const message=
+"KGN Building Demolish - Project Enquiry%0A%0A"+
+"Name: "+encodeURIComponent(name)+"%0A"+
+"Phone: "+encodeURIComponent(phone)+"%0A"+
+"Location: "+encodeURIComponent(location)+"%0A"+
+"Service: "+encodeURIComponent(work)+"%0A"+
+"Project Details: "+encodeURIComponent(details);
 
-  const badge =
-    document.querySelector(".hero-badge");
-
-  if (badge) {
-    badge.textContent = t.badge;
-  }
-
-
-  const heroTitle =
-    document.querySelector(".hero-content h1");
-
-  if (heroTitle) {
-    heroTitle.textContent = t.heroTitle;
-  }
-
-
-  const heroSubtitle =
-    document.querySelector(".hero-subtitle");
-
-  if (heroSubtitle) {
-    heroSubtitle.textContent =
-      t.heroSubtitle;
-  }
-
-
-  const heroButtons =
-    document.querySelectorAll(".hero-buttons .btn");
-
-  if (heroButtons.length >= 2) {
-
-    heroButtons[0].textContent =
-      t.explore;
-
-    heroButtons[1].textContent =
-      t.callNow;
-
-  }
-
-
-  /* SECTION HEADINGS */
-
-  const headings =
-    document.querySelectorAll(".section-heading");
-
-  if (headings.length >= 4) {
-
-    headings[0].querySelector("h2").textContent =
-      t.servicesTitle;
-
-    headings[0].querySelector("p").textContent =
-      t.servicesIntro;
-
-
-    headings[1].querySelector("h2").textContent =
-      t.aboutTitle;
-
-
-    headings[1].querySelector("p").textContent =
-      t.aboutIntro;
-
-
-    headings[2].querySelector("h2").textContent =
-      t.projectTitle;
-
-
-    headings[2].querySelector("p").textContent =
-      t.projectIntro;
-
-
-    headings[3].querySelector("h2").textContent =
-      t.contactTitle;
-
-
-    headings[3].querySelector("p").textContent =
-      t.contactIntro;
-
-  }
-
-
-  /* SERVICES */
-
-  const serviceCards =
-    document.querySelectorAll(".service-card");
-
-  if (serviceCards.length >= 6) {
-
-    serviceCards[0].querySelector("h3").textContent =
-      t.buildingDemolition;
-
-    serviceCards[0].querySelector("p").textContent =
-      t.buildingDemolitionText;
-
-
-    serviceCards[1].querySelector("h3").textContent =
-      t.siteClearing;
-
-    serviceCards[1].querySelector("p").textContent =
-      t.siteClearingText;
-
-
-    serviceCards[2].querySelector("h3").textContent =
-      t.structuralRemoval;
-
-    serviceCards[2].querySelector("p").textContent =
-      t.structuralRemovalText;
-
-
-    serviceCards[3].querySelector("h3").textContent =
-      t.wallCutting;
-
-    serviceCards[3].querySelector("p").textContent =
-      t.wallCuttingText;
-
-
-    serviceCards[4].querySelector("h3").textContent =
-      t.coreCutting;
-
-    serviceCards[4].querySelector("p").textContent =
-      t.coreCuttingText;
-
-
-    serviceCards[5].querySelector("h3").textContent =
-      t.earthMovers;
-
-    serviceCards[5].querySelector("p").textContent =
-      t.earthMoversText;
-
-  }
-
-
-  /* ABOUT */
-
-  const aboutIntro =
-    document.querySelector(".about-intro");
-
-  if (aboutIntro) {
-    aboutIntro.textContent =
-      t.aboutIntro;
-  }
-
-
-  const aboutCards =
-    document.querySelectorAll(".about-card");
-
-  if (aboutCards.length >= 6) {
-
-    aboutCards[0].querySelector("h3").textContent =
-      t.successfulProjects;
-
-    aboutCards[0].querySelector("p").textContent =
-      t.successfulProjectsText;
-
-
-    aboutCards[1].querySelector("h3").textContent =
-      t.governmentProjects;
-
-    aboutCards[1].querySelector("p").textContent =
-      t.governmentProjectsText;
-
-
-    aboutCards[2].querySelector("h3").textContent =
-      t.privateProjects;
-
-    aboutCards[2].querySelector("p").textContent =
-      t.privateProjectsText;
-
-
-    aboutCards[3].querySelector("h3").textContent =
-      t.professionalExecution;
-
-    aboutCards[3].querySelector("p").textContent =
-      t.professionalExecutionText;
-
-
-    aboutCards[4].querySelector("h3").textContent =
-      t.completeSiteSupport;
-
-    aboutCards[4].querySelector("p").textContent =
-      t.completeSiteSupportText;
-
-
-    aboutCards[5].querySelector("h3").textContent =
-      t.experiencedTeam;
-
-    aboutCards[5].querySelector("p").textContent =
-      t.experiencedTeamText;
-
-  }
-
-
-  /* PROJECTS */
-
-  const projectCards =
-    document.querySelectorAll(".project-card");
-
-  if (projectCards.length >= 6) {
-
-    projectCards[0].querySelector("h3").textContent =
-      "🏛️ " + t.governmentProjects;
-
-    projectCards[0].querySelector("p").textContent =
-      t.governmentProjectText;
-
-
-    projectCards[1].querySelector("h3").textContent =
-      "🏢 " + t.privateProjects;
-
-    projectCards[1].querySelector("p").textContent =
-      t.privateProjectText;
-
-
-    projectCards[2].querySelector("h3").textContent =
-      "👤 " +
-      (
-        language === "ta"
-          ? "தனிப்பட்ட திட்டங்கள்"
-          : language === "hi"
-            ? "व्यक्तिगत प्रोजेक्ट्स"
-            : "Individual Projects"
-      );
-
-    projectCards[2].querySelector("p").textContent =
-      t.individualProjectText;
-
-
-    projectCards[3].querySelector("h3").textContent =
-      "🚜 " + t.siteDevelopment;
-
-    projectCards[3].querySelector("p").textContent =
-      t.siteDevelopmentText;
-
-
-    projectCards[4].querySelector("h3").textContent =
-      "🧱 " + t.structuralWork;
-
-    projectCards[4].querySelector("p").textContent =
-      t.structuralWorkText;
-
-
-    projectCards[5].querySelector("h3").textContent =
-      "⭐ " + t.multipleWorks;
-
-    projectCards[5].querySelector("p").textContent =
-      t.multipleWorksText;
-
-  }
-
-
-  /* CONTACT */
-
-  const contactDescription =
-    document.querySelector(".contact-description");
-
-  if (contactDescription) {
-    contactDescription.textContent =
-      t.contactDescription;
-  }
-
-
-  const contactButtons =
-    document.querySelectorAll(".contact-btn");
-
-  if (contactButtons.length >= 4) {
-
-    contactButtons[0].textContent =
-      t.callNow;
-
-    contactButtons[1].textContent =
-      t.whatsapp;
-
-    contactButtons[2].textContent =
-      t.instagram;
-
-    contactButtons[3].textContent =
-      t.facebook;
-
-  }
-
-
-  /* FOOTER */
-
-  const footerParagraphs =
-    document.querySelectorAll("footer p");
-
-  if (footerParagraphs.length >= 2) {
-
-    footerParagraphs[1].textContent =
-      t.footer;
-
-  }
-
-
-  /* AI CHAT */
-
-  const aiHeader =
-    document.querySelector(".ai-header");
-
-  if (aiHeader) {
-
-    const small =
-      aiHeader.querySelector("small");
-
-    if (small) {
-      small.textContent =
-        t.aiSubtitle;
-    }
-
-  }
-
-
-  const aiInput =
-    document.getElementById("aiInput");
-
-  if (aiInput) {
-    aiInput.placeholder =
-      t.aiPlaceholder;
-  }
-
-
-  const aiSend =
-    document.getElementById("aiSend");
-
-  if (aiSend) {
-    aiSend.textContent =
-      t.send;
-  }
-
-
-  /* SAVE LANGUAGE */
-
-  localStorage.setItem(
-    "kgnLanguage",
-    language
-  );
-
-
-  /* UPDATE HTML LANGUAGE */
-
-  document.documentElement.lang =
-    language;
+window.open(
+"https://wa.me/917904515704?text="+message,
+"_blank"
+);
 
 }
 
 
-/* =====================================================
-   LOAD SAVED LANGUAGE
-===================================================== */
+/* =========================
+   AI CHAT
+========================= */
 
-document.addEventListener(
-  "DOMContentLoaded",
-  function () {
+const aiHelp=document.getElementById("aiHelp");
+const aiChat=document.getElementById("aiChat");
+const aiClose=document.getElementById("aiClose");
+const aiInput=document.getElementById("aiInput");
+const messages=document.getElementById("messages");
 
-    const savedLanguage =
-      localStorage.getItem("kgnLanguage") || "en";
+aiHelp.onclick=()=>{
+aiChat.classList.toggle("active");
+if(aiChat.classList.contains("active"))aiInput.focus();
+};
 
-    const selector =
-      document.getElementById("languageSelect");
+aiClose.onclick=()=>{
+aiChat.classList.remove("active");
+};
 
-    if (selector) {
-      selector.value =
-        savedLanguage;
-    }
+function addMessage(text,type){
 
-    changeLanguage(
-      savedLanguage
-    );
+const div=document.createElement("div");
 
-  }
-);
+div.className="msg "+type;
+div.textContent=text;
+
+messages.appendChild(div);
+messages.scrollTop=messages.scrollHeight;
+
+}
+
+function getReply(q){
+
+q=q.toLowerCase();
+
+if(q.includes("service")||q.includes("சேவை")||q.includes("सेवा"))
+return "🛠️ KGN Services:\n\n🏗️ Building Demolition\n🚧 Site Clearing\n🏚️ Structural Removal\n🧱 Wall Cutting\n⚙️ Core Cutting\n🚜 Earth Movers";
+
+if(q.includes("price")||q.includes("cost")||q.includes("விலை")||q.includes("कीमत"))
+return "💰 Project price depends on building size, structure, site condition and work required.\n\n📞 For an accurate quotation call +91 79-04515704.";
+
+if(q.includes("contact")||q.includes("phone")||q.includes("தொடர்பு")||q.includes("संपर्क"))
+return "📞 KGN Building Demolish\n\n+91 79-04515704\n\n💬 WhatsApp enquiry is also available.";
+
+if(q.includes("project")||q.includes("திட்ட")||q.includes("प्रोजेक्ट"))
+return "🏆 KGN has experience in government, private and individual project requirements.";
+
+if(q.includes("wall")||q.includes("சுவர்")||q.includes("दीवार"))
+return "🧱 Yes, KGN provides wall cutting services for renovation and structural requirements.";
+
+if(q.includes("core")||q.includes("கோர்"))
+return "⚙️ KGN provides core cutting services for concrete and construction requirements.";
+
+if(q.includes("hello")||q.includes("hi")||q.includes("வணக்கம்")||q.includes("नमस्ते"))
+return "👋 Hello! Welcome to KGN Building Demolish. How can I help you?";
+
+return "🤖 I can help with:\n\n🛠️ Services\n🏗️ Demolition\n🚧 Site Clearing\n🧱 Wall Cutting\n⚙️ Core Cutting\n🚜 Earth Movers\n🏆 Projects\n💰 Pricing\n📞 Contact";
+
+}
+
+function sendAI(){
+
+const q=aiInput.value.trim();
+
+if(!q)return;
+
+addMessage(q,"user");
+
+aiInput.value="";
+
+setTimeout(()=>{
+addMessage(getReply(q),"bot");
+},400);
+
+}
+
+aiInput.addEventListener("keydown",e=>{
+if(e.key==="Enter")sendAI();
+});
+
+function quick(type){
+
+let q="";
+
+if(type==="services")q="What services do you provide?";
+if(type==="price")q="What is the price?";
+if(type==="contact")q="How can I contact you?";
+
+aiInput.value=q;
+sendAI();
+
+}
+
+</script>
+
+</body>
+</html>
