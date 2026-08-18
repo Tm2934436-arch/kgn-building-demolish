@@ -18,6 +18,16 @@ nav a:hover,.lang button:hover,.lang .active{background:#ffb000;color:#111}
 .lang{display:flex;gap:4px}
 section{padding:85px 6%;scroll-margin-top:90px}
 #home{min-height:90vh;display:flex;align-items:center;justify-content:center;text-align:center;background:radial-gradient(circle,#303030,#151515 45%,#080808)}
+/* KGN cover logo */
+.hero-logo{
+display:block;
+width:min(560px,92vw);
+max-height:220px;
+object-fit:contain;
+margin:0 auto 26px;
+border-radius:14px;
+box-shadow:0 10px 35px rgba(0,0,0,.35);
+}
 .hero{max-width:950px}
 .badge{display:inline-block;border:1px solid #ffb000;color:#ffb000;border-radius:30px;padding:8px 16px;margin-bottom:20px;font-weight:bold}
 h1{font-size:clamp(42px,7vw,82px);line-height:1.05;margin-bottom:25px}
@@ -85,6 +95,8 @@ header{flex-direction:column}
 .grid{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:700px){
+.hero-logo{width:min(92vw,430px);max-height:170px;margin-bottom:20px}
+
 nav a{font-size:12px;padding:7px 6px}
 .logo{font-size:19px;text-align:center}
 .grid{grid-template-columns:1fr}
@@ -118,6 +130,7 @@ section{padding:65px 5%}
 
 <section id="home">
 <div class="hero">
+<img class="hero-logo" src="kgn-logo.png" alt="KGN Building Demolition Logo">
 <div class="badge" data-key="badge">💥 PROFESSIONAL DEMOLITION SERVICES</div>
 <h1>KGN <span data-key="heroTitle">BUILDING DEMOLITION</span></h1>
 <p data-key="heroText">
