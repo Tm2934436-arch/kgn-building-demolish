@@ -9,26 +9,22 @@
 *{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
 body{font-family:Arial,sans-serif;background:#0d0d0d;color:#fff;line-height:1.6}
 a{text-decoration:none}
-header{position:sticky;top:0;z-index:9999;background:rgba(10,10,10,.97);border-bottom:1px solid #333;padding:16px 5%;display:flex;justify-content:space-between;align-items:center;gap:15px}
-.logo{color:#ffb000;font-size:23px;font-weight:900}
-nav{display:flex;flex-wrap:wrap;gap:4px;justify-content:center}
-nav a,.lang button{color:#fff;background:transparent;border:0;padding:9px 10px;border-radius:7px;font-weight:bold;cursor:pointer}
-nav a:hover,.lang button:hover,.lang .active{background:#ffb000;color:#111}
-
+header{position:sticky;top:0;z-index:9999;background:rgba(8,8,8,.98);border-bottom:1px solid #333;padding:13px 4%;display:flex;justify-content:space-between;align-items:center;gap:14px;box-shadow:0 8px 25px rgba(0,0,0,.25)}
+.logo{color:#ffb000;font-size:22px;font-weight:900;white-space:nowrap}
+.header-actions{display:flex;align-items:center;gap:8px}
+.menu-btn{color:#111;background:#ffb000;border:0;padding:10px 14px;border-radius:9px;font-weight:900;cursor:pointer;font-size:15px}
+.menu-btn:hover{background:#ffc83d}
+nav{position:absolute;right:4%;top:70px;width:270px;display:none;flex-direction:column;gap:5px;background:#151515;border:1px solid #444;border-radius:14px;padding:10px;box-shadow:0 18px 50px rgba(0,0,0,.65)}
+nav.open{display:flex}
+nav a{color:#fff;background:#202020;padding:12px 14px;border-radius:9px;font-weight:bold}
+nav a:hover{background:#ffb000;color:#111}
 .lang{display:flex;gap:4px}
+.lang button{color:#fff;background:#202020;border:1px solid #444;padding:8px 9px;border-radius:7px;font-weight:bold;cursor:pointer}
+.lang button:hover,.lang .active{background:#ffb000;color:#111}
 section{padding:85px 6%;scroll-margin-top:90px}
 #home{min-height:90vh;display:flex;align-items:center;justify-content:center;text-align:center;background:radial-gradient(circle,#303030,#151515 45%,#080808)}
-/* KGN cover logo */
-.hero-logo{
-display:block;
-width:min(560px,92vw);
-max-height:220px;
-object-fit:contain;
-margin:0 auto 26px;
-border-radius:14px;
-box-shadow:0 10px 35px rgba(0,0,0,.35);
-}
 .hero{max-width:950px}
+.hero-logo{display:block;width:min(520px,88vw);height:auto;margin:0 auto 24px;object-fit:contain;filter:drop-shadow(0 10px 24px rgba(0,0,0,.25))}
 .badge{display:inline-block;border:1px solid #ffb000;color:#ffb000;border-radius:30px;padding:8px 16px;margin-bottom:20px;font-weight:bold}
 h1{font-size:clamp(42px,7vw,82px);line-height:1.05;margin-bottom:25px}
 h1 span,h2 span{color:#ffb000}
@@ -56,18 +52,17 @@ h2{font-size:clamp(32px,5vw,48px);margin-bottom:12px}
 .about-card{background:#fff;border:1px solid #ddd}
 .about-card h3{color:#222}
 
-
-/* WHY CHOOSE US */
-#why{background:#151515}
-.why-card{background:#222;border:1px solid #383838;border-radius:13px;padding:30px 22px;text-align:center;transition:.3s}
-.why-card:hover{transform:translateY(-6px);border-color:#ffb000}
-.why-card .icon{font-size:42px;margin-bottom:12px}
-.why-card h3{color:#ffb000;margin-bottom:10px}
-.why-card p{color:#ccc}
-
 #projects{background:#0d0d0d}
 .project-card{text-align:left;border-left:5px solid #ffb000}
 
+#why,#how,#reviews,#areas,#safety,#faq,#inspection{background:#101010}
+#why .card,#how .card,#reviews .card,#areas .card,#safety .card,#faq .card,#inspection .card{background:#1d1d1d}
+#how .step{border-top:4px solid #ffb000}
+.review-stars{color:#ffb000;font-size:22px;margin-bottom:8px}
+.review-note{font-size:12px;color:#888;margin-top:10px}
+.area-box{max-width:1000px;margin:auto;text-align:center;background:#1d1d1d;border:1px solid #3b3b3b;border-radius:16px;padding:30px}
+.area-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:9px;margin-top:20px}
+.area-tag{padding:9px 13px;border:1px solid #444;border-radius:20px;color:#ddd;background:#222}
 #contact{background:#1a1a1a;text-align:center}
 .phone{display:inline-block;color:#ffb000;font-size:25px;font-weight:bold;margin:20px}
 .contact-buttons{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
@@ -82,6 +77,16 @@ h2{font-size:clamp(32px,5vw,48px);margin-bottom:12px}
 
 footer{background:#070707;border-top:1px solid #292929;text-align:center;padding:25px;color:#999}
 footer strong{color:#ffb000}
+
+/* QUICK CONTACT BAR + FLOATING BUTTONS */
+.quick-contact-bar{position:fixed;left:50%;bottom:15px;transform:translateX(-50%);z-index:9997;display:flex;gap:7px;background:rgba(12,12,12,.96);border:1px solid #444;padding:7px;border-radius:14px;box-shadow:0 12px 35px rgba(0,0,0,.5)}
+.quick-contact-bar a{color:#fff;background:#242424;padding:9px 13px;border-radius:9px;font-weight:bold;font-size:13px}
+.quick-contact-bar a:hover{background:#ffb000;color:#111}
+.float-actions{position:fixed;right:18px;bottom:95px;z-index:9998;display:flex;flex-direction:column;gap:9px}
+.float-actions a{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#111;font-size:24px;font-weight:bold;box-shadow:0 8px 25px rgba(0,0,0,.45)}
+.float-call{background:#ffb000}
+.float-wa{background:#25d366}
+.inspection-btn{display:inline-block;margin-top:15px;padding:13px 20px;border-radius:9px;background:#ffb000;color:#111;font-weight:900}
 
 /* AI */
 .ai-help{position:fixed;right:20px;bottom:20px;z-index:10000;width:62px;height:62px;border:0;border-radius:50%;background:#ffb000;font-size:28px;cursor:pointer;box-shadow:0 8px 30px #000}
@@ -100,17 +105,22 @@ footer strong{color:#ffb000}
 .ai-input button{border:0;border-radius:8px;padding:0 14px;background:#ffb000;font-weight:bold}
 
 @media(max-width:950px){
-header{flex-direction:column}
 .grid{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:700px){
-.hero-logo{width:min(92vw,430px);max-height:170px;margin-bottom:20px}
-
-nav a{font-size:12px;padding:7px 6px}
-.logo{font-size:19px;text-align:center}
+header{padding:11px 4%}
+.logo{font-size:17px}
+nav{right:3%;left:3%;top:61px;width:auto}
+.header-actions{gap:4px}
+.lang button{padding:7px 6px;font-size:11px}
+.menu-btn{padding:9px 11px;font-size:13px}
 .grid{grid-template-columns:1fr}
-section{padding:65px 5%}
-.ai-chat{right:10px;bottom:88px;width:calc(100vw - 20px)}
+section{padding:62px 5%}
+.quick-contact-bar{left:8px;right:8px;bottom:8px;transform:none;justify-content:center}
+.quick-contact-bar a{flex:1;text-align:center;padding:9px 5px;font-size:11px}
+.float-actions{right:12px;bottom:72px}
+.float-actions a{width:48px;height:48px;font-size:21px}
+.ai-chat{right:10px;bottom:78px;width:calc(100vw - 20px)}
 .ai-help{right:15px;bottom:15px}
 }
 </style>
@@ -120,27 +130,31 @@ section{padding:65px 5%}
 
 <header>
 <div class="logo" data-key="logo">🏗️ KGN Building Demolition</div>
-
-<nav>
-<a href="#home" data-key="home">🏠 Home</a>
-<a href="#services" data-key="services">🛠️ Services</a>
-<a href="#about" data-key="about">🏢 About</a>
-<a href="#why" data-key="why">⭐ Why Us</a>
-<a href="#projects" data-key="projects">🏆 Projects</a>
-<a href="#enquiry" data-key="enquiry">📝 Enquiry</a>
-<a href="#contact" data-key="contact">📞 Contact</a>
-</nav>
-
+<div class="header-actions">
+<button class="menu-btn" id="menuBtn" onclick="toggleMenu()">☰ <span data-key="menu">Menu</span></button>
 <div class="lang">
 <button onclick="changeLanguage('en')" id="enBtn">EN</button>
 <button onclick="changeLanguage('ta')" id="taBtn">தமிழ்</button>
 <button onclick="changeLanguage('hi')" id="hiBtn">हिन्दी</button>
 </div>
+</div>
+<nav id="mainNav">
+<a href="#home" data-key="home" onclick="closeMenu()">🏠 Home</a>
+<a href="#services" data-key="services" onclick="closeMenu()">🛠️ Services</a>
+<a href="#about" data-key="about" onclick="closeMenu()">🏢 About</a>
+<a href="#why" data-key="whyNav" onclick="closeMenu()">⭐ Why Choose Us</a>
+<a href="#how" data-key="howNav" onclick="closeMenu()">⚙️ How We Work</a>
+<a href="#projects" data-key="projects" onclick="closeMenu()">🏆 Projects</a>
+<a href="#areas" data-key="areasNav" onclick="closeMenu()">📍 Service Areas</a>
+<a href="#reviews" data-key="reviewsNav" onclick="closeMenu()">💬 Reviews</a>
+<a href="#enquiry" data-key="enquiry" onclick="closeMenu()">📝 Enquiry</a>
+<a href="#contact" data-key="contact" onclick="closeMenu()">📞 Contact</a>
+</nav>
 </header>
 
 <section id="home">
 <div class="hero">
-<img class="hero-logo" src="kgn-logo.png" alt="KGN Building Demolition Logo">
+<img class="hero-logo" src="kgn-logo.png" alt="KGN Building Demolition logo">
 <div class="badge" data-key="badge">💥 PROFESSIONAL DEMOLITION SERVICES</div>
 <h1>KGN <span data-key="heroTitle">BUILDING DEMOLITION</span></h1>
 <p data-key="heroText">
@@ -254,19 +268,72 @@ structural removal, site clearing and related services.
 </div>
 </section>
 
-
 <section id="why">
 <div class="heading">
 <h2>⭐ <span data-key="whyTitle">Why Choose Us</span></h2>
-<p data-key="whyIntro">Reliable, professional and customer-focused demolition services.</p>
+<p data-key="whyIntro">Professional service, safety-focused work and reliable project support.</p>
 </div>
 <div class="grid">
-<div class="why-card"><div class="icon">👷</div><h3 data-key="whyTeam">Experienced Team</h3><p data-key="whyTeamText">Experienced professionals for safe and efficient demolition work.</p></div>
-<div class="why-card"><div class="icon">🛡️</div><h3 data-key="whySafety">Safety First</h3><p data-key="whySafetyText">We give priority to safety and careful work at every project.</p></div>
-<div class="why-card"><div class="icon">⚡</div><h3 data-key="whyReliable">Fast & Reliable</h3><p data-key="whyReliableText">Proper planning and reliable service to complete work on time.</p></div>
-<div class="why-card"><div class="icon">💰</div><h3 data-key="whyPrice">Competitive Pricing</h3><p data-key="whyPriceText">Quality demolition services at reasonable and transparent pricing.</p></div>
-<div class="why-card"><div class="icon">🧹</div><h3 data-key="whyClear">Complete Site Clearance</h3><p data-key="whyClearText">Debris removal and site clearing support after demolition work.</p></div>
-<div class="why-card"><div class="icon">📞</div><h3 data-key="whyContact">Easy to Contact</h3><p data-key="whyContactText">Call or WhatsApp us easily for project enquiries and quotations.</p></div>
+<div class="card"><div class="icon">👷</div><h3 data-key="why1Title">Experienced Team</h3><p data-key="why1Text">Practical experience across different building structures and site conditions.</p></div>
+<div class="card"><div class="icon">🛡️</div><h3 data-key="why2Title">Safety First</h3><p data-key="why2Text">Safety-focused planning and careful execution for people, property and site surroundings.</p></div>
+<div class="card"><div class="icon">⚡</div><h3 data-key="why3Title">Fast & Reliable</h3><p data-key="why3Text">Clear planning and dependable support from site visit to completion.</p></div>
+<div class="card"><div class="icon">💰</div><h3 data-key="why4Title">Fair Pricing</h3><p data-key="why4Text">Project-based quotations based on the structure, site condition and work required.</p></div>
+<div class="card"><div class="icon">🧹</div><h3 data-key="why5Title">Site Clearance</h3><p data-key="why5Text">Debris handling and site clearing support after demolition work.</p></div>
+<div class="card"><div class="icon">📞</div><h3 data-key="why6Title">Easy Contact</h3><p data-key="why6Text">Call or WhatsApp us easily for project discussion and quotation.</p></div>
+</div>
+</section>
+
+<section id="how">
+<div class="heading">
+<h2>⚙️ <span data-key="howTitle">How We Work</span></h2>
+<p data-key="howIntro">A simple process to make your demolition project easier.</p>
+</div>
+<div class="grid">
+<div class="card step"><div class="icon">1️⃣</div><h3 data-key="step1Title">Site Discussion</h3><p data-key="step1Text">Understand your building, location and work requirement.</p></div>
+<div class="card step"><div class="icon">2️⃣</div><h3 data-key="step2Title">Site Inspection</h3><p data-key="step2Text">Inspect the site and assess structure and access conditions.</p></div>
+<div class="card step"><div class="icon">3️⃣</div><h3 data-key="step3Title">Quotation</h3><p data-key="step3Text">Prepare a project-based quotation after understanding the work.</p></div>
+<div class="card step"><div class="icon">4️⃣</div><h3 data-key="step4Title">Safe Demolition</h3><p data-key="step4Text">Plan and execute the agreed work with safety in mind.</p></div>
+<div class="card step"><div class="icon">5️⃣</div><h3 data-key="step5Title">Clear & Handover</h3><p data-key="step5Text">Complete debris handling and hand over the site as agreed.</p></div>
+</div>
+</section>
+
+<section id="areas">
+<div class="heading">
+<h2>📍 <span data-key="areasTitle">Service Areas</span></h2>
+<p data-key="areasIntro">KGN takes up demolition and site-related projects across Tamil Nadu.</p>
+</div>
+<div class="area-box">
+<h3 data-key="statewideTitle">Tamil Nadu – Statewide Service</h3>
+<p data-key="statewideText">We can consider projects across Tamil Nadu, subject to site inspection, project scope and availability.</p>
+<div class="area-tags">
+<span class="area-tag">Salem</span><span class="area-tag">Chennai</span><span class="area-tag">Coimbatore</span><span class="area-tag">Erode</span><span class="area-tag">Namakkal</span><span class="area-tag">Tiruchirappalli</span><span class="area-tag">Madurai</span><span class="area-tag">Tiruppur</span><span class="area-tag">Dharmapuri</span><span class="area-tag">Krishnagiri</span><span class="area-tag">Vellore</span><span class="area-tag">Thanjavur</span><span class="area-tag">Tirunelveli</span><span class="area-tag">Dindigul</span><span class="area-tag">Karur</span><span class="area-tag">Namakkal</span>
+</div>
+<a href="#inspection" class="inspection-btn" data-key="inspectionBtn">🔎 Get Free Site Inspection</a>
+</div>
+</section>
+
+<section id="safety">
+<div class="heading">
+<h2>🛡️ <span data-key="safetyTitle">Safety & Professional Standards</span></h2>
+<p data-key="safetyIntro">Careful planning and professional execution are important at every project.</p>
+</div>
+<div class="grid">
+<div class="card"><div class="icon">🧱</div><h3 data-key="safety1Title">Site Assessment</h3><p data-key="safety1Text">Understand structure, access, surroundings and work conditions before starting.</p></div>
+<div class="card"><div class="icon">👷</div><h3 data-key="safety2Title">Work Planning</h3><p data-key="safety2Text">Plan the work sequence and site requirements before execution.</p></div>
+<div class="card"><div class="icon">🚧</div><h3 data-key="safety3Title">Controlled Work</h3><p data-key="safety3Text">Carry out demolition and removal work with attention to site conditions.</p></div>
+<div class="card"><div class="icon">🧹</div><h3 data-key="safety4Title">Clean Handover</h3><p data-key="safety4Text">Coordinate debris handling and site clearing as part of the agreed scope.</p></div>
+</div>
+</section>
+
+<section id="reviews">
+<div class="heading">
+<h2>💬 <span data-key="reviewsTitle">Customer Reviews</span></h2>
+<p data-key="reviewsIntro">We value honest feedback from customers after completed work.</p>
+</div>
+<div class="grid">
+<div class="card"><div class="review-stars">★★★★★</div><h3 data-key="review1Title">Customer Feedback</h3><p data-key="review1Text">“Add a genuine customer review here after receiving permission to publish it.”</p><div class="review-note" data-key="reviewNote">Real customer feedback only.</div></div>
+<div class="card"><div class="review-stars">★★★★★</div><h3 data-key="review2Title">Project Experience</h3><p data-key="review2Text">“Add another genuine review describing the actual project experience.”</p><div class="review-note" data-key="reviewNote">Real customer feedback only.</div></div>
+<div class="card"><div class="review-stars">★★★★★</div><h3 data-key="review3Title">Your Review</h3><p data-key="review3Text">“Your next customer review can be displayed here.”</p><div class="review-note" data-key="reviewNote">Real customer feedback only.</div></div>
 </div>
 </section>
 
@@ -298,6 +365,34 @@ structural removal, site clearing and related services.
 <p data-key="siteDevelopmentText">Site clearing, earth moving and debris handling support.</p>
 </div>
 
+</div>
+</section>
+
+<section id="inspection">
+<div class="heading">
+<h2>🔎 <span data-key="inspectionTitle">Free Site Inspection</span></h2>
+<p data-key="inspectionIntro">Share your basic project details and contact KGN for an initial discussion.</p>
+</div>
+<div class="card" style="max-width:760px;margin:auto;text-align:center">
+<div class="icon">🏗️</div>
+<h3 data-key="inspectionCardTitle">Request a Site Inspection</h3>
+<p data-key="inspectionCardText">Tell us your location and demolition requirement. We can discuss the project and site visit availability.</p>
+<a class="inspection-btn" href="#enquiry" data-key="inspectionAction">📝 Request Inspection</a>
+</div>
+</section>
+
+<section id="faq">
+<div class="heading">
+<h2>❓ <span data-key="faqTitle">Frequently Asked Questions</span></h2>
+<p data-key="faqIntro">Quick answers to common project questions.</p>
+</div>
+<div class="grid">
+<div class="card"><h3 data-key="faq1Q">How is the demolition price decided?</h3><p data-key="faq1A">The quotation can depend on building size, structure, location, access, debris and the scope of work.</p></div>
+<div class="card"><h3 data-key="faq2Q">Do you provide site inspection?</h3><p data-key="faq2A">Yes. You can request a site inspection and discuss availability for your project.</p></div>
+<div class="card"><h3 data-key="faq3Q">Do you handle site clearing?</h3><p data-key="faq3A">Yes, site clearing and debris handling can be included depending on the agreed project scope.</p></div>
+<div class="card"><h3 data-key="faq4Q">Which areas do you cover?</h3><p data-key="faq4A">KGN can consider projects across Tamil Nadu, subject to site inspection and availability.</p></div>
+<div class="card"><h3 data-key="faq5Q">How can I send project photos?</h3><p data-key="faq5A">You can send building/site photos through WhatsApp for an initial discussion.</p></div>
+<div class="card"><h3 data-key="faq6Q">How do I contact KGN?</h3><p data-key="faq6A">Call or WhatsApp +91 79-04515704 to discuss your requirement.</p></div>
 </div>
 </section>
 
@@ -353,6 +448,17 @@ structural removal, site clearing and related services.
 <p data-key="footer">🏗️ Professional Demolition & Site Clearing Services</p>
 </footer>
 
+<!-- QUICK CONTACT + FLOATING ACTIONS -->
+<div class="quick-contact-bar">
+<a href="tel:+917904515704" data-key="quickCall">📞 Call</a>
+<a href="https://wa.me/917904515704" target="_blank" data-key="quickWhatsApp">💬 WhatsApp</a>
+<a href="#inspection" data-key="quickInspection">🔎 Free Inspection</a>
+</div>
+<div class="float-actions">
+<a class="float-call" href="tel:+917904515704" aria-label="Call KGN">📞</a>
+<a class="float-wa" href="https://wa.me/917904515704" target="_blank" aria-label="WhatsApp KGN">💬</a>
+</div>
+
 <!-- AI BUTTON -->
 <button class="ai-help" id="aiHelp">🤖</button>
 
@@ -386,6 +492,16 @@ I can help you with services, projects, pricing enquiries and contact details.
 </div>
 
 <script>
+
+/* =========================
+   CLEAN MENU
+========================= */
+const mainNav=document.getElementById("mainNav");
+function toggleMenu(){mainNav.classList.toggle("open");}
+function closeMenu(){mainNav.classList.remove("open");}
+document.addEventListener("click",function(e){
+if(!e.target.closest("header")) closeMenu();
+});
 
 /* =========================
    MULTI LANGUAGE SYSTEM
@@ -422,15 +538,6 @@ earthMovers:"Earth Movers",
 earthText:"Earth moving, excavation, debris handling and site preparation support.",
 aboutTitle:"About KGN",
 aboutIntro:"Professional demolition and site-clearing services.",
-why:"⭐ Why Us",
-whyTitle:"Why Choose Us", whyIntro:"Reliable, professional and customer-focused demolition services.",
-whyTeam:"Experienced Team", whyTeamText:"Experienced professionals for safe and efficient demolition work.",
-whySafety:"Safety First", whySafetyText:"We give priority to safety and careful work at every project.",
-whyReliable:"Fast & Reliable", whyReliableText:"Proper planning and reliable service to complete work on time.",
-whyPrice:"Competitive Pricing", whyPriceText:"Quality demolition services at reasonable and transparent pricing.",
-whyClear:"Complete Site Clearance", whyClearText:"Debris removal and site clearing support after demolition work.",
-whyContact:"Easy to Contact", whyContactText:"Call or WhatsApp us easily for project enquiries and quotations.",
-
 aboutText:"KGN Building DEMOLITION provides professional building demolition, structural removal, site clearing and related services.",
 successful:"Successful Projects",
 successfulText:"Successfully completed numerous demolition and site-related projects.",
@@ -457,7 +564,43 @@ contactIntro:"Need demolition or site-related services? Contact us directly.",
 sendEnquiry:"💬 Send Enquiry on WhatsApp",
 footer:"🏗️ Professional Demolition & Site Clearing Services",
 aiSubtitle:"Ask about our services",
-aiWelcome:"👋 Hello! Welcome to KGN Building DEMOLITION.\n\nI can help you with services, projects, pricing enquiries and contact details."
+aiWelcome:"👋 Hello! Welcome to KGN Building DEMOLITION.\n\nI can help you with services, projects, pricing enquiries and contact details.",
+menu:"Menu",whyNav:"⭐ Why Choose Us",howNav:"⚙️ How We Work",areasNav:"📍 Service Areas",reviewsNav:"💬 Reviews",
+whyTitle:"Why Choose Us",whyIntro:"Professional service, safety-focused work and reliable project support.",
+why1Title:"Experienced Team",why1Text:"Practical experience across different building structures and site conditions.",
+why2Title:"Safety First",why2Text:"Safety-focused planning and careful execution for people, property and site surroundings.",
+why3Title:"Fast & Reliable",why3Text:"Clear planning and dependable support from site visit to completion.",
+why4Title:"Fair Pricing",why4Text:"Project-based quotations based on the structure, site condition and work required.",
+why5Title:"Site Clearance",why5Text:"Debris handling and site clearing support after demolition work.",
+why6Title:"Easy Contact",why6Text:"Call or WhatsApp us easily for project discussion and quotation.",
+howTitle:"How We Work",howIntro:"A simple process to make your demolition project easier.",
+step1Title:"Site Discussion",step1Text:"Understand your building, location and work requirement.",
+step2Title:"Site Inspection",step2Text:"Inspect the site and assess structure and access conditions.",
+step3Title:"Quotation",step3Text:"Prepare a project-based quotation after understanding the work.",
+step4Title:"Safe Demolition",step4Text:"Plan and execute the agreed work with safety in mind.",
+step5Title:"Clear & Handover",step5Text:"Complete debris handling and hand over the site as agreed.",
+areasTitle:"Service Areas",areasIntro:"KGN takes up demolition and site-related projects across Tamil Nadu.",
+statewideTitle:"Tamil Nadu – Statewide Service",statewideText:"We can consider projects across Tamil Nadu, subject to site inspection, project scope and availability.",
+inspectionBtn:"🔎 Get Free Site Inspection",
+safetyTitle:"Safety & Professional Standards",safetyIntro:"Careful planning and professional execution are important at every project.",
+safety1Title:"Site Assessment",safety1Text:"Understand structure, access, surroundings and work conditions before starting.",
+safety2Title:"Work Planning",safety2Text:"Plan the work sequence and site requirements before execution.",
+safety3Title:"Controlled Work",safety3Text:"Carry out demolition and removal work with attention to site conditions.",
+safety4Title:"Clean Handover",safety4Text:"Coordinate debris handling and site clearing as part of the agreed scope.",
+reviewsTitle:"Customer Reviews",reviewsIntro:"We value honest feedback from customers after completed work.",
+review1Title:"Customer Feedback",review1Text:"“Add a genuine customer review here after receiving permission to publish it.”",
+review2Title:"Project Experience",review2Text:"“Add another genuine review describing the actual project experience.”",
+review3Title:"Your Review",review3Text:"“Your next customer review can be displayed here.”",reviewNote:"Real customer feedback only.",
+inspectionTitle:"Free Site Inspection",inspectionIntro:"Share your basic project details and contact KGN for an initial discussion.",
+inspectionCardTitle:"Request a Site Inspection",inspectionCardText:"Tell us your location and demolition requirement. We can discuss the project and site visit availability.",inspectionAction:"📝 Request Inspection",
+faqTitle:"Frequently Asked Questions",faqIntro:"Quick answers to common project questions.",
+faq1Q:"How is the demolition price decided?",faq1A:"The quotation can depend on building size, structure, location, access, debris and the scope of work.",
+faq2Q:"Do you provide site inspection?",faq2A:"Yes. You can request a site inspection and discuss availability for your project.",
+faq3Q:"Do you handle site clearing?",faq3A:"Yes, site clearing and debris handling can be included depending on the agreed project scope.",
+faq4Q:"Which areas do you cover?",faq4A:"KGN can consider projects across Tamil Nadu, subject to site inspection and availability.",
+faq5Q:"How can I send project photos?",faq5A:"You can send building/site photos through WhatsApp for an initial discussion.",
+faq6Q:"How do I contact KGN?",faq6A:"Call or WhatsApp +91 79-04515704 to discuss your requirement.",
+quickCall:"📞 Call",quickWhatsApp:"💬 WhatsApp",quickInspection:"🔎 Free Inspection",
 },
 
 ta:{
@@ -489,15 +632,6 @@ earthMovers:"எர்த் மூவர்ஸ்",
 earthText:"மண் அகழ்வு, மண் நகர்த்துதல், கழிவு அகற்றுதல் மற்றும் தள தயாரிப்பு.",
 aboutTitle:"KGN பற்றி",
 aboutIntro:"தொழில்முறை கட்டிட இடிப்பு மற்றும் தள சுத்தம் செய்யும் சேவைகள்.",
-why:"⭐ ஏன் KGN?",
-whyTitle:"எங்களை ஏன் தேர்வு செய்ய வேண்டும்?", whyIntro:"நம்பகமான, தொழில்முறை மற்றும் வாடிக்கையாளர் மையமான இடிப்பு சேவைகள்.",
-whyTeam:"அனுபவமுள்ள குழு", whyTeamText:"பாதுகாப்பான மற்றும் திறமையான கட்டிட இடிப்புக்கு அனுபவமுள்ள நிபுணர்கள்.",
-whySafety:"பாதுகாப்புக்கு முன்னுரிமை", whySafetyText:"ஒவ்வொரு திட்டத்திலும் பாதுகாப்பான மற்றும் கவனமான பணிக்கு முன்னுரிமை அளிக்கிறோம்.",
-whyReliable:"வேகமான & நம்பகமான சேவை", whyReliableText:"சரியான திட்டமிடலுடன் பணிகளை நேரத்தில் முடிக்க நம்பகமான சேவை.",
-whyPrice:"சிறந்த விலை", whyPriceText:"நியாயமான மற்றும் வெளிப்படையான விலையில் தரமான இடிப்பு சேவைகள்.",
-whyClear:"முழுமையான தள சுத்தம்", whyClearText:"இடிப்பு பணிக்குப் பிறகு கழிவு அகற்றுதல் மற்றும் தள சுத்தம்.",
-whyContact:"எளிதாக தொடர்பு கொள்ளலாம்", whyContactText:"திட்ட விசாரணை மற்றும் quotation-க்கு Call அல்லது WhatsApp செய்யலாம்.",
-
 aboutText:"KGN Building DEMOLITION கட்டிட இடிப்பு, கட்டமைப்பு அகற்றுதல், தள சுத்தம் மற்றும் தொடர்புடைய சேவைகளை வழங்குகிறது.",
 successful:"வெற்றிகரமான திட்டங்கள்",
 successfulText:"பல கட்டிட இடிப்பு மற்றும் தள சம்பந்தமான பணிகளை வெற்றிகரமாக செய்துள்ளோம்.",
@@ -524,7 +658,43 @@ contactIntro:"கட்டிட இடிப்பு அல்லது தள
 sendEnquiry:"💬 WhatsApp-ல் விசாரணை அனுப்பவும்",
 footer:"🏗️ தொழில்முறை கட்டிட இடிப்பு மற்றும் தள சுத்தம் சேவைகள்",
 aiSubtitle:"எங்கள் சேவைகள் பற்றி கேளுங்கள்",
-aiWelcome:"👋 KGN Building DEMOLITION-க்கு வரவேற்கிறோம்.\n\nசேவைகள், திட்டங்கள், விலை விசாரணை மற்றும் தொடர்பு விவரங்களில் உதவ முடியும்."
+aiWelcome:"👋 KGN Building DEMOLITION-க்கு வரவேற்கிறோம்.\n\nசேவைகள், திட்டங்கள், விலை விசாரணை மற்றும் தொடர்பு விவரங்களில் உதவ முடியும்.",
+menu:"மெனு",whyNav:"⭐ ஏன் எங்களை தேர்வு செய்ய வேண்டும்",howNav:"⚙️ எங்கள் பணி முறை",areasNav:"📍 சேவை பகுதிகள்",reviewsNav:"💬 வாடிக்கையாளர் கருத்துகள்",
+whyTitle:"ஏன் எங்களை தேர்வு செய்ய வேண்டும்",whyIntro:"தொழில்முறை சேவை, பாதுகாப்பான பணி மற்றும் நம்பகமான திட்ட ஆதரவு.",
+why1Title:"அனுபவமுள்ள குழு",why1Text:"பலவிதமான கட்டிட அமைப்புகள் மற்றும் தளங்களில் நடைமுறை அனுபவம்.",
+why2Title:"பாதுகாப்பு முதலில்",why2Text:"மக்கள், சொத்து மற்றும் தளத்தை கருத்தில் கொண்டு பாதுகாப்பான திட்டமிடல்.",
+why3Title:"வேகமான & நம்பகமான சேவை",why3Text:"தள பார்வை முதல் பணி முடியும் வரை தெளிவான திட்டமிடல் மற்றும் ஆதரவு.",
+why4Title:"நியாயமான விலை",why4Text:"கட்டிட அமைப்பு, தள நிலை மற்றும் தேவையான பணியை அடிப்படையாகக் கொண்ட quotation.",
+why5Title:"தள சுத்தம்",why5Text:"இடிப்பு பணிக்குப் பிறகு கழிவு அகற்றுதல் மற்றும் தள சுத்தம் செய்யும் ஆதரவு.",
+why6Title:"எளிதான தொடர்பு",why6Text:"திட்ட விவரங்கள் மற்றும் quotation-க்கு Call அல்லது WhatsApp மூலம் தொடர்பு கொள்ளலாம்.",
+howTitle:"எங்கள் பணி முறை",howIntro:"உங்கள் இடிப்பு திட்டத்தை எளிதாக்கும் எளிய செயல்முறை.",
+step1Title:"தள கலந்துரையாடல்",step1Text:"கட்டிடம், இடம் மற்றும் பணித் தேவையைப் புரிந்துகொள்கிறோம்.",
+step2Title:"தள ஆய்வு",step2Text:"தளத்தை பார்வையிட்டு கட்டமைப்பு மற்றும் அணுகல் நிலையை மதிப்பிடுகிறோம்.",
+step3Title:"Quotation",step3Text:"பணியை புரிந்துகொண்ட பிறகு திட்ட அடிப்படையிலான quotation வழங்குகிறோம்.",
+step4Title:"பாதுகாப்பான இடிப்பு",step4Text:"ஒப்புக்கொண்ட பணியை பாதுகாப்பை கருத்தில் கொண்டு திட்டமிட்டு செய்கிறோம்.",
+step5Title:"சுத்தம் & ஒப்படைப்பு",step5Text:"ஒப்புக்கொண்டபடி கழிவு அகற்றுதல் மற்றும் தள ஒப்படைப்பை முடிக்கிறோம்.",
+areasTitle:"சேவை பகுதிகள்",areasIntro:"தமிழ்நாடு முழுவதும் கட்டிட இடிப்பு மற்றும் தள சேவை திட்டங்களை எடுத்துக்கொள்கிறோம்.",
+statewideTitle:"தமிழ்நாடு – மாநிலம் முழுவதும் சேவை",statewideText:"தள ஆய்வு, திட்ட அளவு மற்றும் கிடைக்கும் வசதியைப் பொறுத்து தமிழ்நாடு முழுவதும் திட்டங்களை பரிசீலிக்கலாம்.",
+inspectionBtn:"🔎 இலவச தள ஆய்வு",
+safetyTitle:"பாதுகாப்பு & தொழில்முறை தரநிலைகள்",safetyIntro:"ஒவ்வொரு திட்டத்திலும் கவனமான திட்டமிடலும் தொழில்முறை செயல்பாடும் முக்கியம்.",
+safety1Title:"தள மதிப்பீடு",safety1Text:"பணி தொடங்கும் முன் கட்டமைப்பு, அணுகல் மற்றும் சுற்றுப்புற நிலையை புரிந்துகொள்கிறோம்.",
+safety2Title:"பணி திட்டமிடல்",safety2Text:"செயல்படுத்துவதற்கு முன் பணி வரிசை மற்றும் தள தேவைகளை திட்டமிடுகிறோம்.",
+safety3Title:"கட்டுப்படுத்தப்பட்ட பணி",safety3Text:"தள நிலையை கவனத்தில் கொண்டு இடிப்பு மற்றும் அகற்றும் பணிகளை செய்கிறோம்.",
+safety4Title:"சுத்தமான ஒப்படைப்பு",safety4Text:"ஒப்புக்கொண்ட பணியின் அடிப்படையில் கழிவு அகற்றுதல் மற்றும் தள சுத்தத்தை ஒருங்கிணைக்கிறோம்.",
+reviewsTitle:"வாடிக்கையாளர் கருத்துகள்",reviewsIntro:"பணி முடிந்த பிறகு வாடிக்கையாளர்களின் உண்மையான கருத்துகளை மதிக்கிறோம்.",
+review1Title:"வாடிக்கையாளர் கருத்து",review1Text:"“அனுமதி பெற்ற பிறகு உண்மையான வாடிக்கையாளர் கருத்தை இங்கே சேர்க்கலாம்.”",
+review2Title:"திட்ட அனுபவம்",review2Text:"“உண்மையான திட்ட அனுபவத்தை விவரிக்கும் மற்றொரு கருத்தை இங்கே சேர்க்கலாம்.”",
+review3Title:"உங்கள் கருத்து",review3Text:"“அடுத்த வாடிக்கையாளர் கருத்தை இங்கே காட்டலாம்.”",reviewNote:"உண்மையான வாடிக்கையாளர் கருத்துகள் மட்டும்.",
+inspectionTitle:"இலவச தள ஆய்வு",inspectionIntro:"உங்கள் திட்டத்தின் அடிப்படை விவரங்களை பகிர்ந்து KGN-ஐ தொடர்பு கொள்ளுங்கள்.",
+inspectionCardTitle:"தள ஆய்வை கோருங்கள்",inspectionCardText:"உங்கள் இடம் மற்றும் இடிப்பு தேவையை தெரிவிக்கவும். திட்டம் மற்றும் தள பார்வை வசதி பற்றி பேசலாம்.",inspectionAction:"📝 தள ஆய்வு கோரிக்கை",
+faqTitle:"அடிக்கடி கேட்கப்படும் கேள்விகள்",faqIntro:"பொதுவான திட்ட கேள்விகளுக்கான விரைவான பதில்கள்.",
+faq1Q:"இடிப்பு விலை எப்படி நிர்ணயிக்கப்படுகிறது?",faq1A:"கட்டிட அளவு, அமைப்பு, இடம், அணுகல், கழிவு மற்றும் பணியின் அளவைப் பொறுத்து quotation மாறலாம்.",
+faq2Q:"தள ஆய்வு செய்ய முடியுமா?",faq2A:"ஆம். உங்கள் திட்டத்திற்கான தள ஆய்வு மற்றும் கிடைக்கும் நேரத்தைப் பற்றி கேட்கலாம்.",
+faq3Q:"தள சுத்தம் செய்யும் சேவை உள்ளதா?",faq3A:"ஆம், ஒப்புக்கொள்ளப்பட்ட திட்டத்தின் அடிப்படையில் தள சுத்தம் மற்றும் கழிவு அகற்றுதல் சேர்க்கலாம்.",
+faq4Q:"எந்த பகுதிகளில் சேவை செய்கிறீர்கள்?",faq4A:"தள ஆய்வு மற்றும் கிடைக்கும் வசதியைப் பொறுத்து தமிழ்நாடு முழுவதும் திட்டங்களை பரிசீலிக்கலாம்.",
+faq5Q:"Project photos எப்படி அனுப்புவது?",faq5A:"ஆரம்ப கலந்துரையாடலுக்காக building/site photos-ஐ WhatsApp மூலம் அனுப்பலாம்.",
+faq6Q:"KGN-ஐ எப்படி தொடர்பு கொள்வது?",faq6A:"+91 79-04515704 என்ற எண்ணுக்கு Call அல்லது WhatsApp செய்யலாம்.",
+quickCall:"📞 அழைக்க",quickWhatsApp:"💬 WhatsApp",quickInspection:"🔎 இலவச ஆய்வு",
 },
 
 hi:{
@@ -556,15 +726,6 @@ earthMovers:"अर्थ मूवर्स",
 earthText:"अर्थ मूविंग, खुदाई, मलबा हटाना और साइट तैयारी।",
 aboutTitle:"KGN के बारे में",
 aboutIntro:"प्रोफेशनल डिमोलिशन और साइट क्लियरिंग सेवाएं।",
-why:"⭐ क्यों KGN?",
-whyTitle:"हमें क्यों चुनें?", whyIntro:"विश्वसनीय, प्रोफेशनल और ग्राहक-केंद्रित डिमोलिशन सेवाएं।",
-whyTeam:"अनुभवी टीम", whyTeamText:"सुरक्षित और कुशल डिमोलिशन कार्य के लिए अनुभवी प्रोफेशनल।",
-whySafety:"सुरक्षा पहले", whySafetyText:"हर प्रोजेक्ट में सुरक्षा और सावधानीपूर्ण कार्य को प्राथमिकता।",
-whyReliable:"तेज़ और भरोसेमंद", whyReliableText:"सही प्लानिंग के साथ समय पर काम पूरा करने की भरोसेमंद सेवा।",
-whyPrice:"उचित कीमत", whyPriceText:"उचित और पारदर्शी कीमत पर गुणवत्तापूर्ण डिमोलिशन सेवाएं।",
-whyClear:"पूरी साइट क्लियरिंग", whyClearText:"डिमोलिशन के बाद मलबा हटाने और साइट क्लियरिंग की सहायता।",
-whyContact:"आसानी से संपर्क करें", whyContactText:"प्रोजेक्ट पूछताछ और कोटेशन के लिए Call या WhatsApp करें।",
-
 aboutText:"KGN Building DEMOLITION बिल्डिंग डिमोलिशन, स्ट्रक्चरल रिमूवल, साइट क्लियरिंग और संबंधित सेवाएं प्रदान करता है।",
 successful:"सफल प्रोजेक्ट्स",
 successfulText:"कई डिमोलिशन और साइट संबंधी प्रोजेक्ट सफलतापूर्वक पूरे किए हैं।",
@@ -591,7 +752,43 @@ contactIntro:"डिमोलिशन या साइट सेवा चा�
 sendEnquiry:"💬 WhatsApp पर पूछताछ भेजें",
 footer:"🏗️ प्रोफेशनल डिमोलिशन और साइट क्लियरिंग सेवाएं",
 aiSubtitle:"हमारी सेवाओं के बारे में पूछें",
-aiWelcome:"👋 KGN Building DEMOLITION में आपका स्वागत है।\n\nमैं सेवाओं, प्रोजेक्ट्स, कीमत और संपर्क जानकारी में मदद कर सकता हूं।"
+aiWelcome:"👋 KGN Building DEMOLITION में आपका स्वागत है।\n\nमैं सेवाओं, प्रोजेक्ट्स, कीमत और संपर्क जानकारी में मदद कर सकता हूं।",
+menu:"मेन्यू",whyNav:"⭐ हमें क्यों चुनें",howNav:"⚙️ हमारा काम",areasNav:"📍 सेवा क्षेत्र",reviewsNav:"💬 ग्राहक समीक्षा",
+whyTitle:"हमें क्यों चुनें",whyIntro:"प्रोफेशनल सेवा, सुरक्षा पर ध्यान और भरोसेमंद प्रोजेक्ट सपोर्ट।",
+why1Title:"अनुभवी टीम",why1Text:"अलग-अलग भवन संरचनाओं और साइट स्थितियों का व्यावहारिक अनुभव।",
+why2Title:"सुरक्षा पहले",why2Text:"लोगों, संपत्ति और साइट के आसपास की सुरक्षा को ध्यान में रखकर काम की योजना।",
+why3Title:"तेज़ और भरोसेमंद",why3Text:"साइट विजिट से काम पूरा होने तक स्पष्ट योजना और भरोसेमंद सपोर्ट।",
+why4Title:"उचित कीमत",why4Text:"संरचना, साइट की स्थिति और काम के अनुसार प्रोजेक्ट आधारित quotation।",
+why5Title:"साइट क्लियरिंग",why5Text:"डिमोलिशन के बाद मलबा हटाने और साइट क्लियरिंग में सहायता।",
+why6Title:"आसान संपर्क",why6Text:"प्रोजेक्ट चर्चा और quotation के लिए Call या WhatsApp करें।",
+howTitle:"हम कैसे काम करते हैं",howIntro:"आपके डिमोलिशन प्रोजेक्ट को आसान बनाने की सरल प्रक्रिया।",
+step1Title:"साइट चर्चा",step1Text:"भवन, स्थान और काम की जरूरत समझते हैं।",
+step2Title:"साइट निरीक्षण",step2Text:"साइट देखकर संरचना और पहुंच की स्थिति का आकलन करते हैं।",
+step3Title:"Quotation",step3Text:"काम समझने के बाद प्रोजेक्ट आधारित quotation तैयार करते हैं।",
+step4Title:"सुरक्षित डिमोलिशन",step4Text:"सुरक्षा को ध्यान में रखकर सहमत काम की योजना और कार्यान्वयन करते हैं।",
+step5Title:"क्लियर और हैंडओवर",step5Text:"सहमत कार्य के अनुसार मलबा हटाकर साइट हैंडओवर करते हैं।",
+areasTitle:"सेवा क्षेत्र",areasIntro:"KGN पूरे तमिलनाडु में डिमोलिशन और साइट संबंधी प्रोजेक्ट्स पर विचार करता है।",
+statewideTitle:"तमिलनाडु – राज्यव्यापी सेवा",statewideText:"साइट निरीक्षण, प्रोजेक्ट स्कोप और उपलब्धता के आधार पर पूरे तमिलनाडु में प्रोजेक्ट्स पर विचार किया जा सकता है।",
+inspectionBtn:"🔎 फ्री साइट इंस्पेक्शन",
+safetyTitle:"सुरक्षा और प्रोफेशनल मानक",safetyIntro:"हर प्रोजेक्ट में सावधानीपूर्वक योजना और प्रोफेशनल काम महत्वपूर्ण है।",
+safety1Title:"साइट आकलन",safety1Text:"काम शुरू करने से पहले संरचना, पहुंच और आसपास की स्थिति समझते हैं।",
+safety2Title:"काम की योजना",safety2Text:"काम शुरू करने से पहले कार्य क्रम और साइट आवश्यकताओं की योजना बनाते हैं।",
+safety3Title:"नियंत्रित कार्य",safety3Text:"साइट की स्थिति को ध्यान में रखते हुए डिमोलिशन और रिमूवल करते हैं।",
+safety4Title:"साफ हैंडओवर",safety4Text:"सहमत कार्य के अनुसार मलबा हटाने और साइट क्लियरिंग का समन्वय करते हैं।",
+reviewsTitle:"ग्राहक समीक्षा",reviewsIntro:"काम पूरा होने के बाद ग्राहकों की वास्तविक प्रतिक्रिया हमारे लिए महत्वपूर्ण है।",
+review1Title:"ग्राहक प्रतिक्रिया",review1Text:"“अनुमति मिलने के बाद यहां वास्तविक ग्राहक समीक्षा जोड़ें।”",
+review2Title:"प्रोजेक्ट अनुभव",review2Text:"“वास्तविक प्रोजेक्ट अनुभव बताने वाली दूसरी समीक्षा यहां जोड़ें।”",
+review3Title:"आपकी समीक्षा",review3Text:"“अगली ग्राहक समीक्षा यहां दिखाई जा सकती है।”",reviewNote:"केवल वास्तविक ग्राहक प्रतिक्रिया।",
+inspectionTitle:"फ्री साइट इंस्पेक्शन",inspectionIntro:"अपने प्रोजेक्ट की बुनियादी जानकारी साझा करके KGN से संपर्क करें।",
+inspectionCardTitle:"साइट इंस्पेक्शन का अनुरोध",inspectionCardText:"अपना स्थान और डिमोलिशन आवश्यकता बताएं। प्रोजेक्ट और साइट विजिट की उपलब्धता पर चर्चा कर सकते हैं।",inspectionAction:"📝 इंस्पेक्शन अनुरोध",
+faqTitle:"अक्सर पूछे जाने वाले सवाल",faqIntro:"सामान्य प्रोजेक्ट सवालों के त्वरित जवाब।",
+faq1Q:"डिमोलिशन की कीमत कैसे तय होती है?",faq1A:"कीमत भवन का आकार, संरचना, स्थान, पहुंच, मलबा और काम के दायरे पर निर्भर कर सकती है।",
+faq2Q:"क्या साइट इंस्पेक्शन उपलब्ध है?",faq2A:"हां। आप साइट इंस्पेक्शन और अपने प्रोजेक्ट की उपलब्धता के बारे में पूछ सकते हैं।",
+faq3Q:"क्या साइट क्लियरिंग करते हैं?",faq3A:"हां, सहमत प्रोजेक्ट स्कोप के अनुसार साइट क्लियरिंग और मलबा हटाना शामिल किया जा सकता है।",
+faq4Q:"कौन से क्षेत्र कवर करते हैं?",faq4A:"साइट इंस्पेक्शन और उपलब्धता के आधार पर पूरे तमिलनाडु में प्रोजेक्ट्स पर विचार किया जा सकता है।",
+faq5Q:"प्रोजेक्ट फोटो कैसे भेजें?",faq5A:"शुरुआती चर्चा के लिए भवन/साइट की फोटो WhatsApp से भेज सकते हैं।",
+faq6Q:"KGN से कैसे संपर्क करें?",faq6A:"+91 79-04515704 पर Call या WhatsApp करें।",
+quickCall:"📞 कॉल",quickWhatsApp:"💬 WhatsApp",quickInspection:"🔎 फ्री इंस्पेक्शन",
 }
 
 };
