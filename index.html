@@ -341,6 +341,79 @@ footer{background:#123326;border-top:1px solid #244b3b;text-align:center;padding
 }
 </style>
 
+
+<style>
+/* FINAL KGN GREEN CINEMATIC HERO */
+#home{
+  background:#164c36!important;
+  min-height:92vh;
+}
+#home::before{
+  background:
+    linear-gradient(180deg,rgba(12,61,40,.58) 0%,rgba(20,101,65,.64) 48%,rgba(7,42,28,.90) 100%),
+    radial-gradient(ellipse at 50% 18%,rgba(104,190,145,.42),transparent 48%),
+    linear-gradient(135deg,#0d4b32 0%,#237a50 48%,#0b3a28 100%)!important;
+  animation:greenPulse 9s ease-in-out infinite alternate;
+}
+#home::after{
+  background:
+    linear-gradient(115deg,transparent 0 28%,rgba(255,255,255,.11) 29%,transparent 31% 65%,rgba(255,255,255,.08) 66%,transparent 68%),
+    linear-gradient(0deg,rgba(255,255,255,.06),transparent 35%);
+  opacity:.7!important;
+  animation:greenSweep 12s ease-in-out infinite alternate!important;
+}
+.cinematic-site{opacity:1!important}
+.sky-glow{
+  background:
+    radial-gradient(ellipse at 52% 25%,rgba(155,225,190,.34) 0 10%,transparent 43%),
+    radial-gradient(ellipse at 82% 25%,rgba(97,190,145,.22),transparent 35%)!important;
+}
+.site-haze{
+  background:linear-gradient(180deg,transparent,rgba(107,198,155,.16),rgba(4,45,29,.22))!important;
+}
+.ground-grid{
+  background:
+    linear-gradient(rgba(255,255,255,.22) 2px,transparent 2px),
+    linear-gradient(90deg,rgba(255,255,255,.22) 2px,transparent 2px)!important;
+  opacity:.58!important;
+}
+.site-lines{opacity:.55!important}
+.future-building{
+  opacity:.24!important;
+  filter:drop-shadow(0 18px 32px rgba(0,0,0,.28))!important;
+}
+.fb-roof{
+  background:linear-gradient(180deg,rgba(255,255,255,.92),rgba(181,228,205,.55))!important;
+}
+.fb-floor{
+  background:rgba(255,255,255,.14)!important;
+  border-color:rgba(255,255,255,.68)!important;
+}
+.fb-glass{
+  background:linear-gradient(135deg,rgba(255,255,255,.72),rgba(75,173,125,.36))!important;
+  border-color:rgba(255,255,255,.65)!important;
+}
+.site-crane{opacity:.72!important}
+.site-crane .crane-mast,
+.site-crane .crane-jib{background:#fff!important}
+#home h1{color:#fff!important;text-shadow:0 4px 20px rgba(0,0,0,.52)!important}
+#home .hero p{color:#f3fff9!important}
+@keyframes greenPulse{
+  from{filter:saturate(.92) brightness(.94)}
+  to{filter:saturate(1.16) brightness(1.06)}
+}
+@keyframes greenSweep{
+  from{transform:translateX(-2%) scale(1.02)}
+  to{transform:translateX(2%) scale(1.06)}
+}
+@media(max-width:700px){
+  #home{min-height:88vh}
+  .future-building{opacity:.18!important}
+  .ground-grid{opacity:.35!important}
+  .site-lines{opacity:.4!important}
+}
+</style>
+
 </head>
 
 <body>
