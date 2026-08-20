@@ -324,6 +324,23 @@ footer{background:#123326;border-top:1px solid #244b3b;text-align:center;padding
 @media(max-width:700px){.call-modal-box{padding:27px 17px 20px}.call-number-btn strong{font-size:16px}}
 </style>
 
+
+<style>
+/* Keep phone numbers hidden in the Contact section.
+   Visitors see only the Call button and choose a number after clicking it. */
+.contact-phone,
+.contact-number,
+.contact-details .phone,
+.contact-section .phone,
+.contact-section .phone-number,
+.contact .phone-number,
+.contact-info .phone,
+.contact-info .phone-number,
+.contact-info a[href^="tel:"]{
+  display:none !important;
+}
+</style>
+
 </head>
 
 <body>
@@ -627,7 +644,7 @@ structural removal, site clearing and related services.
 <div class="card"><h3 data-key="faq3Q">Do you handle site clearing?</h3><p data-key="faq3A">Yes, site clearing and debris handling can be included depending on the agreed project scope.</p></div>
 <div class="card"><h3 data-key="faq4Q">Which areas do you cover?</h3><p data-key="faq4A">KGN can consider projects across Tamil Nadu, subject to site inspection and availability.</p></div>
 <div class="card"><h3 data-key="faq5Q">How can I send project photos?</h3><p data-key="faq5A">You can send building/site photos through WhatsApp for an initial discussion.</p></div>
-<div class="card"><h3 data-key="faq6Q">How do I contact KGN?</h3><p data-key="faq6A">Call or WhatsApp +91 79-04515704 to discuss your requirement.</p></div>
+<div class="card"><h3 data-key="faq6Q">How do I contact KGN?</h3></div>
 </div>
 </section>
 
@@ -668,8 +685,8 @@ structural removal, site clearing and related services.
 <p data-key="contactIntro">Need demolition or site-related services? Contact us directly.</p>
 </div>
 
-<a class="phone" href="javascript:void(0)" onclick="openCallChooser()">📞 +91 79-04515704</a>
-<a class="phone" href="javascript:void(0)" onclick="openCallChooser()">📞 +91 90431 16169</a>
+
+
  
 <div class="contact-buttons">
 <a class="contact-btn" href="javascript:void(0)" onclick="openCallChooser()">📞 Call</a>
@@ -706,11 +723,11 @@ structural removal, site clearing and related services.
     <p>Select a number to call</p>
     <a class="call-number-btn" href="tel:+917904515704">
       <span>📞</span>
-      <span><small>KGN Building Demolition</small><strong>+91 79-04515704</strong></span>
+      <span><small>KGN Building Demolition</small><strong><span class="contact-number">+91 79-04515704</span></strong></span>
     </a>
     <a class="call-number-btn" href="tel:+919043116169">
       <span>📞</span>
-      <span><small>KGN Building Demolition</small><strong>+91 90431 16169</strong></span>
+      <span><small>KGN Building Demolition</small><strong><span class="contact-number">+91 90431 16169</span></strong></span>
     </a>
   </div>
 </div>
