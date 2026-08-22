@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tm2934436-arch.github.io/kgn-building-demolish/sitemap.xml
